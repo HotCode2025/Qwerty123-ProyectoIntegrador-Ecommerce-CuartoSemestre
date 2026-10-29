@@ -4,11 +4,14 @@ import { StrictMode } from "react";
 import { createRoot } from "react-dom/client";
 import Aplicacion from "./Aplicacion.jsx";
 import { ProveedorAjustes } from "./contexto/ProveedorAjustes.jsx";
+import { ProveedorAutenticacion } from "./contexto/ProveedorAutenticacion.jsx";
 
 createRoot(document.getElementById("root")).render(
   <StrictMode>
     <ProveedorAjustes>
-      <Aplicacion />
+      <ProveedorAutenticacion>
+        <Aplicacion />
+      </ProveedorAutenticacion>
     </ProveedorAjustes>
   </StrictMode>,
 );
