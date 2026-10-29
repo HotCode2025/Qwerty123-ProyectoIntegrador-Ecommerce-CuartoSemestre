@@ -1,0 +1,4 @@
+# Normaliza los finales de línea para que el equipo trabaje igual en Windows, Linux y Mac
+* text=auto
+*.docx binary
+*.pdf binary

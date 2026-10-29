@@ -1,0 +1,44 @@
+.aviso {
+  position: fixed;
+  left: 50%;
+  bottom: 20px;
+  z-index: 50;
+  transform: translateX(-50%);
+  width: max-content;
+  max-width: calc(100vw - 32px);
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 12px 18px;
+  border: 3px solid var(--tinta);
+  border-radius: 16px;
+  background: var(--amarillo);
+  box-shadow: 5px 5px 0 var(--tinta);
+  animation: subir 0.35s cubic-bezier(0.3, 1.5, 0.5, 1);
+}
+
+.chico {
+  display: block;
+  font-size: 13px;
+}
+
+/* Pelota que pica mientras espera */
+.pelota {
+  width: 22px;
+  height: 22px;
+  flex: none;
+  border: 3px solid var(--tinta);
+  border-radius: 50%;
+  background: var(--blanco);
+  animation: rebotar 0.6s cubic-bezier(0.5, 0, 0.5, 1) infinite alternate;
+}
+
+@keyframes subir {
+  from { opacity: 0; transform: translate(-50%, 20px); }
+  to { opacity: 1; transform: translate(-50%, 0); }
+}
+
+@keyframes rebotar {
+  from { transform: translateY(0); }
+  to { transform: translateY(-10px); }
+}

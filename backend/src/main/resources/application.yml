@@ -1,0 +1,64 @@
+spring:
+  application:
+    name: golden-point-api
+  config:
+    # En desarrollo lee las variables desde backend/.env (no se sube a Git); en el deploy las define el hosting
+    import: optional:file:.env[.properties]
+  datasource:
+    url: ${DB_URL:jdbc:mysql://localhost:3306/golden_point?createDatabaseIfNotExist=true}
+    username: ${DB_USER}
+    password: ${DB_PASSWORD}
+  servlet:
+    multipart:
+      # Fotos de productos: hasta 3 MB
+      max-file-size: 3MB
+      max-request-size: 4MB
+  jpa:
+    open-in-view: false
+    show-sql: ${SHOW_SQL:false}
+    hibernate:
+      # update solo en desarrollo; en producción se usa validate
+      ddl-auto: ${DDL_AUTO:update}
+    properties:
+      hibernate:
+        format_sql: true
+        # Carga las relaciones de varios productos en una sola consulta (evita el problema N+1)
+        default_batch_fetch_size: 50
+
+server:
+  # Render asigna el puerto con la variable PORT
+  port: ${PORT:8080}
+
+golden-point:
+  tienda:
+    costo-envio: 10000              # costo fijo del envío a domicilio
+    envio-gratis-desde: 100000      # envío gratis desde este monto (productos + personalización)
+    recargo-personalizacion: 8000   # recargo por camiseta personalizada
+  mercadopago:
+    access-token: ${MP_ACCESS_TOKEN:}
+    # Clave para verificar la firma de los avisos (webhooks); se configura en el deploy
+    clave-webhook: ${MP_WEBHOOK_SECRET:}
+    # URL pública del backend para recibir avisos; vacía en desarrollo (localhost no es accesible desde Mercado Pago)
+    url-notificaciones: ${MP_NOTIFICATION_URL:}
+    # A dónde vuelve el cliente después de pagar
+    url-frontend: ${FRONTEND_URL:http://localhost:5173}
+  correo:
+    # Sin clave de Brevo los mails se muestran en el log en vez de enviarse (útil en desarrollo)
+    brevo-api-key: ${BREVO_API_KEY:}
+    remitente-email: ${BREVO_SENDER_EMAIL:}
+    remitente-nombre: Golden Point
+    # Para armar los links de los mails hacia el sitio
+    url-frontend: ${FRONTEND_URL:http://localhost:5173}
+  # cloudinary://API_KEY:API_SECRET@CLOUD_NAME (Cloudinary → Settings → API Keys)
+  cloudinary-url: ${CLOUDINARY_URL:}
+  cors:
+    # Orígenes del frontend separados por coma (en producción, el dominio de Vercel)
+    origenes-permitidos: ${CORS_ORIGINS:http://localhost:5173}
+  jwt:
+    # Clave para firmar los tokens: mínimo 32 caracteres, solo en .env o en el hosting
+    clave: ${JWT_SECRET}
+    horas-expiracion: 24
+  admin:
+    # Primer administrador; CargadorDatos lo crea si todavía no hay ninguno
+    email: ${ADMIN_EMAIL:}
+    contrasena: ${ADMIN_PASSWORD:}
