@@ -1,0 +1,31 @@
+.caja {
+  text-align: center;
+  padding-top: 96px;
+  padding-bottom: 120px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+}
+
+.codigo {
+  margin: 0;
+  font-size: 40px;
+  padding: 4px 18px;
+  border: 3px solid var(--tinta);
+  border-radius: 14px;
+  background: var(--amarillo);
+  box-shadow: 5px 5px 0 var(--tinta);
+  transform: rotate(-4deg);
+}
+
+.titulo {
+  font-size: clamp(56px, 8vw, 120px);
+  margin: 0;
+}
+
+.texto {
+  margin: 0;
+  font-size: 19px;
+  max-width: 480px;
+}

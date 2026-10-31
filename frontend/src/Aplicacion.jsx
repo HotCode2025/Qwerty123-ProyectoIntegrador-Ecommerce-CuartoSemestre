@@ -1,10 +1,17 @@
-import { createBrowserRouter, RouterProvider } from "react-router";
-import AvisoServidor from "./componentes/AvisoServidor/AvisoServidor";
+import { createBrowserRouter, RouterProvider } from 'react-router'
+import AvisoServidor from './componentes/AvisoServidor/AvisoServidor'
+import Plantilla from './componentes/Plantilla/Plantilla'
+import NoEncontrada from './paginas/NoEncontrada/NoEncontrada'
 
 // Rutas del sitio (URLs en español). La tienda y el panel tienen cada uno su propia estructura
 const enrutador = createBrowserRouter([
-  // Cada issue de pantalla agrega acá su ruta
-]);
+  {
+    element: <Plantilla />,
+    children: [
+      { path: '*', element: <NoEncontrada /> },
+    ],
+  },
+])
 
 function Aplicacion() {
   return (
@@ -12,7 +19,7 @@ function Aplicacion() {
       <RouterProvider router={enrutador} />
       <AvisoServidor />
     </>
-  );
+  )
 }
 
-export default Aplicacion;
+export default Aplicacion
