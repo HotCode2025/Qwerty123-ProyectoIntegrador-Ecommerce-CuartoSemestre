@@ -2,6 +2,7 @@ import { createBrowserRouter, RouterProvider } from 'react-router'
 import AvisoServidor from './componentes/AvisoServidor/AvisoServidor'
 import Carrito from './paginas/Carrito/Carrito'
 import Catalogo from './paginas/Catalogo/Catalogo'
+import FinalizarCompra from './paginas/FinalizarCompra/FinalizarCompra'
 import PaginaProducto from './paginas/DetalleProducto/DetalleProducto'
 import Plantilla from './componentes/Plantilla/Plantilla'
 import Inicio from './paginas/Inicio/Inicio'
@@ -17,6 +18,7 @@ const enrutador = createBrowserRouter([
       { path: '/', element: <Inicio /> },
       { path: '/carrito', element: <Carrito /> },
       { path: '/catalogo', element: <Catalogo /> },
+      { path: '/finalizar-compra', element: <FinalizarCompra /> },
       { path: '/producto/:id', element: <PaginaProducto /> },
       { path: '*', element: <NoEncontrada /> },
       
