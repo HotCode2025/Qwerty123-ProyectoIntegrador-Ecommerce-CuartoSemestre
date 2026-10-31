@@ -1,8 +1,11 @@
 import { createBrowserRouter, RouterProvider } from 'react-router'
 import AvisoServidor from './componentes/AvisoServidor/AvisoServidor'
+import Catalogo from './paginas/Catalogo/Catalogo'
 import Plantilla from './componentes/Plantilla/Plantilla'
 import Inicio from './paginas/Inicio/Inicio'
 import NoEncontrada from './paginas/NoEncontrada/NoEncontrada'
+      
+
 
 // Rutas del sitio (URLs en español). La tienda y el panel tienen cada uno su propia estructura
 const enrutador = createBrowserRouter([
@@ -10,7 +13,9 @@ const enrutador = createBrowserRouter([
     element: <Plantilla />,
     children: [
       { path: '/', element: <Inicio /> },
+      { path: '/catalogo', element: <Catalogo /> },
       { path: '*', element: <NoEncontrada /> },
+      
     ],
   },
 ])
