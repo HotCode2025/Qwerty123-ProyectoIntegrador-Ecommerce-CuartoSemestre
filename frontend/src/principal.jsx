@@ -5,12 +5,15 @@ import { createRoot } from "react-dom/client";
 import Aplicacion from "./Aplicacion.jsx";
 import { ProveedorAjustes } from "./contexto/ProveedorAjustes.jsx";
 import { ProveedorAutenticacion } from "./contexto/ProveedorAutenticacion.jsx";
+import { ProveedorCarrito } from "./contexto/ProveedorCarrito.jsx";
 
 createRoot(document.getElementById("root")).render(
   <StrictMode>
     <ProveedorAjustes>
       <ProveedorAutenticacion>
-        <Aplicacion />
+        <ProveedorCarrito>
+          <Aplicacion />
+        </ProveedorCarrito>
       </ProveedorAutenticacion>
     </ProveedorAjustes>
   </StrictMode>,
