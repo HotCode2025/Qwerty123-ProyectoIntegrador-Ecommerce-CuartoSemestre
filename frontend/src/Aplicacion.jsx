@@ -1,5 +1,6 @@
 import { createBrowserRouter, RouterProvider } from 'react-router'
 import AvisoServidor from './componentes/AvisoServidor/AvisoServidor'
+import Carrito from './paginas/Carrito/Carrito'
 import Catalogo from './paginas/Catalogo/Catalogo'
 import PaginaProducto from './paginas/DetalleProducto/DetalleProducto'
 import Plantilla from './componentes/Plantilla/Plantilla'
@@ -14,6 +15,7 @@ const enrutador = createBrowserRouter([
     element: <Plantilla />,
     children: [
       { path: '/', element: <Inicio /> },
+      { path: '/carrito', element: <Carrito /> },
       { path: '/catalogo', element: <Catalogo /> },
       { path: '/producto/:id', element: <PaginaProducto /> },
       { path: '*', element: <NoEncontrada /> },

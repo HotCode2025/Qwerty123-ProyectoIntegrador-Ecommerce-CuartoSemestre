@@ -1,0 +1,247 @@
+.pantalla {
+  animation: entrar 0.45s cubic-bezier(0.3, 1.4, 0.5, 1);
+}
+
+.titulo {
+  font-size: clamp(56px, 8vw, 112px);
+  margin: 0;
+  padding-top: 36px;
+}
+
+.cartel {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  margin-top: 18px;
+  padding: 12px 18px;
+  border: 3px solid var(--tinta);
+  border-radius: 14px;
+  background: var(--verde);
+  font-weight: 700;
+  box-shadow: 4px 4px 0 var(--tinta);
+  animation: golpe 0.5s cubic-bezier(0.3, 1.6, 0.5, 1);
+}
+
+.disposicion {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 400px;
+  gap: 36px;
+  padding: 28px 0 88px;
+}
+
+.lineas {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.linea {
+  display: grid;
+  grid-template-columns: 100px minmax(0, 1fr) auto;
+  gap: 18px;
+  align-items: center;
+  padding: 16px;
+  border: 3px solid var(--tinta);
+  border-radius: 20px;
+  box-shadow: 5px 5px 0 var(--tinta);
+  background: var(--blanco);
+  animation: entrar-rebotando 0.5s both;
+}
+
+.miniatura {
+  position: relative;
+  width: 100px;
+  height: 100px;
+  border: 3px solid var(--tinta);
+  border-radius: 14px;
+  background: var(--crema);
+  overflow: hidden;
+  display: grid;
+  place-items: center;
+  color: var(--tinta);
+}
+
+.miniatura img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.ilustracionMiniatura {
+  width: 70%;
+  height: 70%;
+}
+
+.infoLinea {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.nombreLinea {
+  margin: 0;
+  font-weight: 700;
+  font-size: 17px;
+}
+
+.personalizado {
+  font-weight: 700;
+}
+
+.oferta {
+  font-weight: 700;
+  color: var(--tinta);
+}
+
+.oferta s {
+  font-weight: 400;
+  color: var(--apagado);
+}
+
+.derechaLinea {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 10px;
+}
+
+.totalLinea {
+  font-size: 24px;
+}
+
+.accionesLinea {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+
+.cantidad {
+  display: inline-flex;
+  align-items: center;
+  border: 3px solid var(--tinta);
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.cantidad button {
+  width: 44px;
+  height: 44px;
+  border: 0;
+  background: var(--blanco);
+  font-size: 20px;
+  font-weight: 700;
+}
+
+.cantidad button:hover:not(:disabled) {
+  background: var(--amarillo);
+}
+
+.cantidad button:disabled {
+  color: #9a9a9a;
+  cursor: default;
+}
+
+.cantidad span {
+  min-width: 28px;
+  text-align: center;
+  font-weight: 700;
+}
+
+.quitar {
+  width: 48px;
+  height: 48px;
+  border: 3px solid var(--tinta);
+  border-radius: 14px;
+  background: var(--blanco);
+  display: grid;
+  place-items: center;
+  padding: 0;
+  box-shadow: 3px 3px 0 var(--tinta);
+  transition: transform 0.12s, box-shadow 0.12s;
+}
+
+.quitar:hover {
+  transform: translate(-2px, -2px);
+  box-shadow: 5px 5px 0 var(--tinta);
+}
+
+.advertencia {
+  margin: 0;
+  font-weight: 700;
+  font-size: 14px;
+}
+
+.botonFinalizar {
+  justify-content: center;
+  min-height: 58px;
+}
+
+.nota {
+  margin: 0;
+  text-align: center;
+  font-size: 14px;
+}
+
+.vacio {
+  margin: 32px 0 88px;
+  text-align: center;
+  padding: 56px 16px;
+  border: 3px dashed var(--tinta);
+  border-radius: 22px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+}
+
+.tituloVacio {
+  font-size: 44px;
+  margin: 0;
+}
+
+.textoVacio {
+  margin: 0;
+}
+
+@media (max-width: 860px) {
+  .disposicion {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}
+
+@media (max-width: 560px) {
+  .linea {
+    grid-template-columns: 76px minmax(0, 1fr);
+  }
+
+  .miniatura {
+    width: 76px;
+    height: 76px;
+  }
+
+  .derechaLinea {
+    grid-column: 1 / -1;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .tituloVacio {
+    font-size: 36px;
+  }
+}
+
+@keyframes entrar {
+  from { opacity: 0; transform: scale(0.97) translateY(14px); }
+  to { opacity: 1; transform: none; }
+}
+
+@keyframes golpe {
+  0% { opacity: 0; transform: scale(1.6) rotate(-8deg); }
+  100% { opacity: 1; }
+}
+
+@keyframes entrar-rebotando {
+  0% { opacity: 0; transform: scale(0.85) rotate(-3deg); }
+  100% { opacity: 1; transform: none; }
+}
