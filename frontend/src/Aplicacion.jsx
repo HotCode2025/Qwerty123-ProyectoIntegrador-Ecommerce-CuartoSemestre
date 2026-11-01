@@ -7,7 +7,7 @@ import PaginaProducto from './paginas/DetalleProducto/DetalleProducto'
 import Plantilla from './componentes/Plantilla/Plantilla'
 import Inicio from './paginas/Inicio/Inicio'
 import NoEncontrada from './paginas/NoEncontrada/NoEncontrada'
-      
+import Ingresar from './paginas/Ingresar/Ingresar'
 
 
 // Rutas del sitio (URLs en español). La tienda y el panel tienen cada uno su propia estructura
@@ -21,7 +21,7 @@ const enrutador = createBrowserRouter([
       { path: '/finalizar-compra', element: <FinalizarCompra /> },
       { path: '/producto/:id', element: <PaginaProducto /> },
       { path: '*', element: <NoEncontrada /> },
-      
+      { path: '/ingresar', element: <Ingresar /> },
     ],
   },
 ])

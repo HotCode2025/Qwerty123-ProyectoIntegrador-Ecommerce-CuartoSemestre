@@ -1,0 +1,195 @@
+.acceso {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  gap: 32px;
+  align-items: center;
+  padding-top: 48px;
+  padding-bottom: 88px;
+  animation: entrar 0.45s cubic-bezier(0.3, 1.4, 0.5, 1);
+}
+
+/* ---------- Ilustración ---------- */
+.ilustracion {
+  position: relative;
+  aspect-ratio: 1 / 1;
+  border: 4px solid var(--tinta);
+  border-radius: 30px;
+  background: var(--verde);
+  box-shadow: 10px 10px 0 var(--tinta);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: 32px;
+}
+
+.lineasIlustracion {
+  position: absolute;
+  inset: 8%;
+  border: 3px solid var(--blanco);
+  border-radius: 6px;
+}
+
+.pelota {
+  position: absolute;
+  top: 12%;
+  left: 62%;
+  width: 18%;
+  aspect-ratio: 1 / 1;
+  border: 4px solid var(--tinta);
+  border-radius: 50%;
+  background: var(--amarillo);
+  transform-origin: 50% 100%;
+  animation: picar 1.3s cubic-bezier(0.5, 0, 0.5, 1) infinite;
+}
+
+.sombra {
+  position: absolute;
+  top: 52%;
+  left: 63%;
+  width: 16%;
+  height: 4%;
+  border-radius: 50%;
+  background: var(--tinta);
+  opacity: 0.35;
+  animation: sombra 1.3s cubic-bezier(0.5, 0, 0.5, 1) infinite;
+}
+
+.textoIlustracion {
+  position: relative;
+  font-size: clamp(52px, 6vw, 92px);
+  margin: 0;
+}
+
+/* ---------- Formulario ---------- */
+.tarjeta {
+  padding: 32px;
+  border: 3px solid var(--tinta);
+  border-radius: 26px;
+  background: var(--blanco);
+  box-shadow: 6px 6px 0 var(--tinta);
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.motivo {
+  padding: 12px 18px;
+  border: 3px solid var(--tinta);
+  border-radius: 14px;
+  background: var(--amarillo);
+  font-weight: 700;
+  box-shadow: 4px 4px 0 var(--tinta);
+  animation: golpe 0.5s cubic-bezier(0.3, 1.6, 0.5, 1);
+}
+
+.pestanias {
+  display: flex;
+  gap: 8px;
+}
+
+.pestania {
+  flex: 1;
+  min-height: 48px;
+  border: 3px solid var(--tinta);
+  border-radius: 12px;
+  background: var(--blanco);
+  font-weight: 700;
+  transition: transform 0.12s;
+}
+
+.pestaniaActiva {
+  background: var(--tinta);
+  color: var(--amarillo);
+}
+
+.formulario {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.fila {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 16px;
+}
+
+.enviar {
+  justify-content: center;
+  min-height: 56px;
+}
+
+/* ---------- Ya logueado ---------- */
+.hecho {
+  text-align: center;
+  padding-top: 96px;
+  padding-bottom: 120px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+}
+
+.tituloHecho {
+  font-size: clamp(48px, 7vw, 96px);
+  margin: 0;
+}
+
+.textoHecho {
+  margin: 0;
+  font-size: 19px;
+}
+
+.botones {
+  display: flex;
+  gap: 14px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+@media (max-width: 860px) {
+  .acceso {
+    grid-template-columns: minmax(0, 1fr);
+    padding-top: 28px;
+  }
+
+  /* En celular la ilustración queda como una franja baja arriba del formulario */
+  .ilustracion {
+    aspect-ratio: auto;
+    min-height: 200px;
+    order: -1;
+  }
+}
+
+@media (max-width: 560px) {
+  .tarjeta {
+    padding: 20px;
+  }
+
+  .fila {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}
+
+@keyframes entrar {
+  from { opacity: 0; transform: scale(0.97) translateY(14px); }
+  to { opacity: 1; transform: none; }
+}
+
+@keyframes golpe {
+  0% { opacity: 0; transform: scale(1.6) rotate(-8deg); }
+  100% { opacity: 1; }
+}
+
+@keyframes picar {
+  0%, 100% { transform: translateY(0) scale(1.08, 0.88); }
+  12% { transform: translateY(-6%) scale(0.95, 1.06); }
+  50% { transform: translateY(-120%) scale(1, 1); }
+  88% { transform: translateY(-6%) scale(0.95, 1.06); }
+}
+
+@keyframes sombra {
+  0%, 100% { transform: scale(1); opacity: 0.35; }
+  50% { transform: scale(0.45); opacity: 0.12; }
+}
