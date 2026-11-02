@@ -1,0 +1,22 @@
+.pie {
+  margin-top: 24px;
+  background: var(--tinta);
+  color: var(--blanco);
+  padding: 44px 24px;
+}
+
+.interior {
+  max-width: 1300px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 20px;
+  align-items: center;
+  font-size: 14px;
+}
+
+.marca {
+  font-size: 30px;
+  color: var(--amarillo);
+}

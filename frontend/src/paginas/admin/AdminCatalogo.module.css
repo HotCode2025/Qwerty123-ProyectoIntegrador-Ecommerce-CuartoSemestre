@@ -1,0 +1,137 @@
+.columnas {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 24px;
+  align-items: start;
+}
+
+.tarjeta {
+  padding: 18px 20px;
+  border: 3px solid var(--tinta);
+  border-radius: 18px;
+  background: var(--blanco);
+  box-shadow: 5px 5px 0 var(--tinta);
+}
+
+.titulo {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin: 0 0 10px;
+  font-size: 24px;
+}
+
+.titulo > span:last-child {
+  margin-left: auto;
+  font-family: var(--fuente-texto);
+}
+
+.lista {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.fila {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 6px;
+  border-top: 2px dashed var(--tinta);
+  border-radius: 10px;
+  transition: background 0.12s;
+}
+
+.fila:first-child {
+  border-top: 0;
+}
+
+.fila:hover {
+  background: #fff8de;
+}
+
+.filaEditando,
+.filaEditando:hover {
+  background: var(--crema);
+}
+
+.filaPeligro,
+.filaPeligro:hover {
+  justify-content: space-between;
+  background: #ffe3de;
+}
+
+.nombre {
+  flex: 1;
+  min-width: 0;
+}
+
+.accionesFila {
+  display: flex;
+  gap: 6px;
+}
+
+.formularioEdicion,
+.formularioAlta {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  width: 100%;
+}
+
+.formularioEdicion :global(.entrada) {
+  min-height: 40px;
+}
+
+.formularioEdicion select:global(.entrada),
+.formularioAlta select:global(.entrada) {
+  width: auto;
+  flex: none;
+}
+
+.formularioAlta {
+  margin-top: 12px;
+  padding-top: 14px;
+  border-top: 3px solid var(--tinta);
+}
+
+.formularioAlta :global(.boton) {
+  flex: none;
+  min-height: 48px;
+}
+
+.advertencia {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  margin: 0 0 10px;
+  padding: 10px 12px;
+  border: 2.5px solid var(--tinta);
+  border-radius: 12px;
+  background: #ffe3de;
+  font-weight: 700;
+}
+
+.esqueleto {
+  height: 160px;
+  border: 3px dashed var(--tinta);
+  border-radius: 12px;
+  background: var(--crema);
+}
+
+@media (max-width: 1060px) {
+  .columnas {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}
+
+@media (max-width: 560px) {
+  .fila {
+    flex-wrap: wrap;
+  }
+
+  .formularioAlta,
+  .formularioEdicion {
+    flex-wrap: wrap;
+  }
+}

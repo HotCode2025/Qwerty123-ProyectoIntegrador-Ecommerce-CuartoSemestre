@@ -1,0 +1,94 @@
+.pantalla {
+  text-align: center;
+  padding-top: 96px;
+  padding-bottom: 120px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+  animation: entrar 0.45s cubic-bezier(0.3, 1.4, 0.5, 1);
+}
+
+.titulo {
+  font-size: clamp(56px, 8vw, 120px);
+  margin: 0;
+}
+
+.tituloChico {
+  font-size: clamp(44px, 6vw, 84px);
+  margin: 0;
+}
+
+.bajada {
+  margin: 0;
+  font-size: 19px;
+}
+
+.texto {
+  max-width: 480px;
+  margin: 0;
+}
+
+.botones {
+  display: flex;
+  gap: 14px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+/* Tilde que se dibuja sola */
+.circulo {
+  stroke-dasharray: 151;
+  stroke-dashoffset: 151;
+  animation: dibujar 0.7s forwards;
+}
+
+.tilde {
+  stroke-dasharray: 32;
+  stroke-dashoffset: 32;
+  animation: dibujar 0.4s 0.65s forwards;
+}
+
+.papelitos {
+  position: relative;
+  width: 240px;
+  height: 60px;
+}
+
+.papelitos span {
+  position: absolute;
+  top: 0;
+  width: 14px;
+  height: 14px;
+  border: 2px solid var(--tinta);
+  animation: papelitos 1.4s cubic-bezier(0.2, 0.8, 0.2, 1) both;
+}
+
+.ruedita {
+  width: 64px;
+  height: 64px;
+  border: 4px solid var(--tinta);
+  border-radius: 50%;
+  background: var(--amarillo);
+  animation: rebotar 0.7s cubic-bezier(0.5, 0, 0.5, 1) infinite;
+}
+
+@keyframes entrar {
+  from { opacity: 0; transform: scale(0.97) translateY(14px); }
+  to { opacity: 1; transform: none; }
+}
+
+@keyframes dibujar {
+  to { stroke-dashoffset: 0; }
+}
+
+@keyframes papelitos {
+  0% { opacity: 0; transform: translateY(40px) rotate(0); }
+  30% { opacity: 1; }
+  100% { opacity: 1; transform: translateY(0) rotate(220deg); }
+}
+
+@keyframes rebotar {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-24px); }
+}

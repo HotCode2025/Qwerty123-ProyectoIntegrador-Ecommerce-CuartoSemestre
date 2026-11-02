@@ -1,0 +1,20 @@
+.pagina {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.franjaSuperior {
+  margin: 0;
+  background: var(--tinta);
+  color: var(--amarillo);
+  font-weight: 700;
+  font-size: 14px;
+  text-align: center;
+  padding: 8px 16px;
+}
+
+/* Empuja el footer al fondo en pantallas con poco contenido */
+.contenido {
+  flex: 1;
+}

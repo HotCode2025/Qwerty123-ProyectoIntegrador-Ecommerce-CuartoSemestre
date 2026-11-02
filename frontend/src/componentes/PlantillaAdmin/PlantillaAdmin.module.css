@@ -1,0 +1,211 @@
+.pagina {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* ---------- Barra superior ---------- */
+.superior {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+  padding: 10px 20px;
+  background: var(--tinta);
+  color: var(--amarillo);
+}
+
+.marca {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: var(--amarillo);
+  text-decoration: none;
+  font-size: 22px;
+}
+
+.pelota {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background: var(--amarillo);
+  color: var(--tinta);
+  display: grid;
+  place-items: center;
+  font-family: var(--fuente-display);
+  font-weight: 800;
+  font-size: 16px;
+}
+
+.etiqueta {
+  border: 2px solid var(--amarillo);
+  border-radius: 999px;
+  padding: 1px 10px;
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.accionesSuperiores {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  font-weight: 700;
+  font-size: 14px;
+}
+
+.enlaceSuperior {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  color: var(--amarillo);
+  background: none;
+  border: 0;
+  padding: 6px 0;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.enlaceSuperior:hover {
+  text-decoration: underline;
+}
+
+.yo {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.avatar {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  background: var(--amarillo);
+  color: var(--tinta);
+  display: grid;
+  place-items: center;
+  font-size: 12px;
+}
+
+/* ---------- Menú lateral ---------- */
+.cuerpo {
+  flex: 1;
+  display: grid;
+  grid-template-columns: 240px minmax(0, 1fr);
+}
+
+.lateral {
+  background: var(--amarillo);
+  border-right: 3px solid var(--tinta);
+  padding: 20px 14px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.tituloLateral {
+  margin: 0 0 4px 8px;
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--apagado);
+}
+
+.itemMenu {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  min-height: 46px;
+  padding: 0 12px;
+  border: 2.5px solid transparent;
+  border-radius: 12px;
+  font-weight: 700;
+  text-decoration: none;
+  transition: background 0.15s, border-color 0.15s, transform 0.15s;
+}
+
+.itemMenu:hover {
+  background: #ffe08a;
+  border-color: var(--tinta);
+  transform: translateX(3px);
+}
+
+.itemActivo,
+.itemActivo:hover {
+  background: var(--blanco);
+  border-color: var(--tinta);
+  box-shadow: 3px 3px 0 var(--tinta);
+  transform: none;
+}
+
+.contador {
+  margin-left: auto;
+  min-width: 26px;
+  height: 24px;
+  padding: 0 7px;
+  border: 2px solid var(--tinta);
+  border-radius: 12px;
+  background: var(--naranja);
+  font-size: 12px;
+  display: grid;
+  place-items: center;
+}
+
+.sesion {
+  margin-top: auto;
+  padding-top: 12px;
+  border-top: 2px dashed var(--tinta);
+  font-size: 12px;
+  color: var(--apagado);
+  overflow-wrap: anywhere;
+}
+
+.contenido {
+  padding: 28px 32px 64px;
+  min-width: 0;
+}
+
+/* En celular el menú pasa arriba como una fila de botones */
+@media (max-width: 860px) {
+  .cuerpo {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .lateral {
+    flex-direction: row;
+    overflow-x: auto;
+    border-right: 0;
+    border-bottom: 3px solid var(--tinta);
+    padding: 10px 12px;
+  }
+
+  .tituloLateral,
+  .sesion {
+    display: none;
+  }
+
+  .itemMenu {
+    flex: none;
+    min-height: 42px;
+  }
+
+  .itemMenu:hover {
+    transform: none;
+  }
+
+  .contenido {
+    padding: 20px 16px 48px;
+  }
+}
+
+@media (max-width: 560px) {
+  .ocultarChico {
+    display: none;
+  }
+
+  .marca {
+    font-size: 18px;
+  }
+
+  .accionesSuperiores {
+    gap: 12px;
+  }
+}

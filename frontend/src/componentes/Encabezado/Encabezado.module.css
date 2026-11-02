@@ -1,0 +1,188 @@
+.barra {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  height: 84px;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  text-decoration: none;
+}
+
+.logoPelota {
+  width: 42px;
+  height: 42px;
+  flex: none;
+  border: 3px solid var(--tinta);
+  border-radius: 50%;
+  background: var(--amarillo);
+  display: grid;
+  place-items: center;
+  font-family: var(--fuente-display);
+  font-weight: 800;
+  font-size: 20px;
+  animation: rodar 6s ease-in-out infinite;
+}
+
+.logoTexto {
+  font-size: 28px;
+  white-space: nowrap;
+}
+
+.menu {
+  display: flex;
+  gap: 8px;
+}
+
+.enlaceMenu {
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
+  padding: 0 16px;
+  border: 3px solid transparent;
+  border-radius: 999px;
+  font-weight: 700;
+  text-decoration: none;
+  transition: all 0.15s;
+}
+
+.enlaceMenu:hover {
+  border-color: var(--tinta);
+  background: var(--amarillo);
+  transform: rotate(-3deg);
+}
+
+.activo {
+  border-color: var(--tinta);
+  background: var(--amarillo);
+}
+
+.acciones {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+}
+
+.botonIcono {
+  position: relative;
+  width: 48px;
+  height: 48px;
+  border: 3px solid var(--tinta);
+  border-radius: 14px;
+  background: var(--blanco);
+  color: var(--tinta);
+  display: grid;
+  place-items: center;
+  padding: 0;
+  box-shadow: 3px 3px 0 var(--tinta);
+  transition: transform 0.12s, box-shadow 0.12s;
+}
+
+.botonIcono:hover {
+  transform: translate(-2px, -2px);
+  box-shadow: 5px 5px 0 var(--tinta);
+}
+
+.botonIcono:active {
+  transform: translate(2px, 2px);
+  box-shadow: 1px 1px 0 var(--tinta);
+}
+
+.burbuja {
+  position: absolute;
+  top: -10px;
+  right: -10px;
+  min-width: 24px;
+  height: 24px;
+  padding: 0 4px;
+  border: 2px solid var(--tinta);
+  border-radius: 12px;
+  background: var(--naranja);
+  font-size: 12px;
+  font-weight: 700;
+  display: grid;
+  place-items: center;
+  animation: sacudirse 2.4s ease-in-out infinite;
+}
+
+.hamburguesa {
+  display: none;
+}
+
+.menuMovil {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  padding: 8px 24px 24px;
+  animation: caer 0.3s;
+}
+
+.menuMovil a {
+  font-family: var(--fuente-display);
+  font-weight: 800;
+  font-size: 30px;
+  text-decoration: none;
+  padding: 10px 16px;
+  border: 3px solid var(--tinta);
+  border-radius: 14px;
+  background: var(--amarillo);
+  box-shadow: 4px 4px 0 var(--tinta);
+}
+
+@media (max-width: 860px) {
+  .menu {
+    display: none;
+  }
+
+  .hamburguesa {
+    display: grid;
+  }
+}
+
+/* Celulares chicos: logo e íconos más compactos para que entren los tres botones */
+@media (max-width: 420px) {
+  .barra {
+    padding: 0 16px;
+    gap: 8px;
+  }
+
+  .logoPelota {
+    width: 36px;
+    height: 36px;
+    font-size: 17px;
+  }
+
+  .logoTexto {
+    font-size: 20px;
+  }
+
+  .acciones {
+    gap: 8px;
+  }
+
+  .botonIcono {
+    width: 44px;
+    height: 44px;
+  }
+}
+
+@keyframes rodar {
+  0%, 70%, 100% { transform: rotate(0); }
+  85% { transform: rotate(360deg); }
+}
+
+@keyframes sacudirse {
+  0%, 80%, 100% { transform: rotate(0); }
+  85% { transform: rotate(-14deg); }
+  90% { transform: rotate(12deg); }
+  95% { transform: rotate(-6deg); }
+}
+
+@keyframes caer {
+  from { opacity: 0; transform: translateY(-10px); }
+  to { opacity: 1; transform: none; }
+}

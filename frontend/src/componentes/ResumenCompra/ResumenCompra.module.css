@@ -1,0 +1,38 @@
+.resumen {
+  padding: 26px;
+  border: 3px solid var(--tinta);
+  border-radius: 24px;
+  background: var(--amarillo);
+  box-shadow: 6px 6px 0 var(--tinta);
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  align-self: start;
+  transition: opacity 0.2s;
+}
+
+.cargando {
+  opacity: 0.7;
+}
+
+.titulo {
+  font-size: 36px;
+  margin: 0;
+}
+
+.fila {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.filaTotal {
+  border-top: 3px solid var(--tinta);
+  padding-top: 14px;
+  align-items: baseline;
+  font-weight: 700;
+}
+
+.total {
+  font-size: 40px;
+}

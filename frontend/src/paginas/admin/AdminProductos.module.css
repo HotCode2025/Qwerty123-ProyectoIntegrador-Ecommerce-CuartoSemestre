@@ -1,0 +1,110 @@
+.barraHerramientas {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex-wrap: wrap;
+  margin-bottom: 16px;
+}
+
+.miniatura {
+  flex: none;
+  width: 48px;
+  height: 48px;
+  border: 2.5px solid var(--tinta);
+  border-radius: 10px;
+  background: var(--crema);
+  overflow: hidden;
+  display: grid;
+  place-items: center;
+}
+
+.miniatura img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.ilustracion {
+  width: 70%;
+  height: 70%;
+}
+
+.fila:hover {
+  background: #fff8de;
+}
+
+/* Foto y nombre llevan a la edición */
+.producto {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  min-width: 0;
+  text-decoration: none;
+}
+
+.producto:hover .titulo {
+  text-decoration: underline;
+}
+
+.nombre {
+  min-width: 0;
+}
+
+.acciones {
+  display: flex;
+  gap: 8px;
+}
+
+.basura:hover:not(:disabled) {
+  background: #ffe3de;
+}
+
+.aviso {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin: 0 0 16px;
+  padding: 10px 14px;
+  border: 2.5px solid var(--tinta);
+  border-radius: 12px;
+  background: var(--verde);
+  font-weight: 700;
+}
+
+.cerrarAviso {
+  margin-left: auto;
+  padding: 4px;
+  border: 0;
+  background: none;
+  display: grid;
+}
+
+.marcas {
+  display: flex;
+  gap: 6px;
+  flex-wrap: wrap;
+  margin-top: 4px;
+}
+
+.marcas:empty {
+  display: none;
+}
+
+.destacado {
+  background: var(--amarillo);
+}
+
+.oferta {
+  background: var(--naranja);
+}
+
+.deshabilitado,
+.sinStock {
+  background: var(--error);
+}
+
+@media (max-width: 760px) {
+  .producto {
+    flex-basis: 100%;
+  }
+}

@@ -1,0 +1,317 @@
+.pantalla {
+  animation: entrar 0.45s cubic-bezier(0.3, 1.4, 0.5, 1);
+}
+
+.cabecera {
+  padding-top: 36px;
+}
+
+.migas {
+  font-size: 14px;
+  margin: 0;
+}
+
+.titulo {
+  font-size: clamp(56px, 8vw, 112px);
+  margin: 6px 0 4px;
+}
+
+.disposicion {
+  display: grid;
+  grid-template-columns: 280px minmax(0, 1fr);
+  gap: 36px;
+  padding: 32px 0 88px;
+}
+
+/* ---------- Filtros ---------- */
+.filtros {
+  padding: 22px;
+  border: 3px solid var(--tinta);
+  border-radius: 22px;
+  background: var(--blanco);
+  box-shadow: 6px 6px 0 var(--tinta);
+  display: flex;
+  flex-direction: column;
+  gap: 22px;
+  align-self: start;
+}
+
+.alternarFiltros {
+  display: none;
+}
+
+.cantidad {
+  min-width: 26px;
+  height: 26px;
+  padding: 0 6px;
+  border: 2px solid var(--tinta);
+  border-radius: 13px;
+  background: var(--naranja);
+  font-size: 13px;
+  display: grid;
+  place-items: center;
+}
+
+.grupo {
+  border: 0;
+  margin: 0;
+  padding: 0;
+  min-width: 0;
+}
+
+.tituloGrupo {
+  display: block;
+  padding: 0;
+  margin: 0 0 10px;
+  font-family: var(--fuente-display);
+  font-weight: 800;
+  font-size: 18px;
+}
+
+.fichas {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.ficha {
+  min-height: 42px;
+  padding: 0 14px;
+  border: 2.5px solid var(--tinta);
+  border-radius: 999px;
+  background: var(--blanco);
+  font-weight: 700;
+  font-size: 14px;
+  transition: transform 0.12s;
+}
+
+.ficha:hover {
+  transform: rotate(-3deg);
+}
+
+.fichaActiva {
+  background: var(--tinta);
+  color: var(--amarillo);
+  animation: aparecer 0.3s;
+}
+
+.grupoTalle + .grupoTalle {
+  margin-top: 12px;
+}
+
+.tipoTalle {
+  margin: 0 0 6px;
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--apagado);
+}
+
+.rango {
+  width: 100%;
+  accent-color: var(--tinta);
+}
+
+.textoPrecio {
+  margin: 4px 0 0;
+  font-size: 14px;
+  font-weight: 700;
+}
+
+.filaBusqueda {
+  display: flex;
+  gap: 8px;
+}
+
+.entrada {
+  width: 100%;
+  min-height: 48px;
+  border: 3px solid var(--tinta);
+  border-radius: 12px;
+  background: var(--blanco);
+  padding: 0 12px;
+  font: inherit;
+  color: var(--tinta);
+  transition: box-shadow 0.15s;
+}
+
+.entrada:focus {
+  outline: none;
+  box-shadow: 4px 4px 0 var(--azul);
+}
+
+.botonBuscar {
+  flex: none;
+  width: 48px;
+  height: 48px;
+  border: 3px solid var(--tinta);
+  border-radius: 12px;
+  background: var(--amarillo);
+  display: grid;
+  place-items: center;
+  padding: 0;
+}
+
+.filtros button:disabled {
+  opacity: 0.45;
+  cursor: default;
+  transform: none;
+  box-shadow: none;
+}
+
+/* ---------- Resultados ---------- */
+.barraHerramientas {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 22px;
+}
+
+.barraHerramientas .entrada {
+  width: auto;
+}
+
+.etiquetaOrden {
+  font-weight: 700;
+  font-size: 15px;
+}
+
+.grilla {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 24px;
+  transition: opacity 0.2s;
+}
+
+.cargando {
+  opacity: 0.5;
+}
+
+.esqueleto {
+  aspect-ratio: 3 / 4;
+  border: 3px dashed var(--tinta);
+  border-radius: 22px;
+  background: var(--crema);
+  animation: latir 1.2s ease-in-out infinite;
+}
+
+.error {
+  margin: 0 0 24px;
+  padding: 12px 16px;
+  border: 3px solid var(--tinta);
+  border-radius: 12px;
+  background: var(--error);
+  font-weight: 700;
+}
+
+.vacio {
+  text-align: center;
+  padding: 56px 16px;
+  border: 3px dashed var(--tinta);
+  border-radius: 22px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+}
+
+.tituloVacio {
+  font-size: 40px;
+  margin: 0;
+}
+
+.textoVacio {
+  margin: 0;
+}
+
+.paginador {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 16px;
+  margin-top: 40px;
+}
+
+.paginador button:disabled {
+  opacity: 0.4;
+  cursor: default;
+  transform: none;
+  box-shadow: none;
+}
+
+.textoPagina {
+  font-weight: 700;
+}
+
+/* ---------- Responsive ---------- */
+@media (max-width: 1060px) {
+  .grilla {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 860px) {
+  .disposicion {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 20px;
+    padding-top: 20px;
+  }
+
+  /* En celular los filtros se abren con un botón para no tapar los productos */
+  .alternarFiltros {
+    display: inline-flex;
+    justify-self: start;
+  }
+
+  .filtros {
+    display: none;
+  }
+
+  .filtrosAbiertos {
+    display: flex;
+    animation: caer 0.3s;
+  }
+
+  .grilla {
+    gap: 14px;
+  }
+
+  .barraHerramientas {
+    justify-content: space-between;
+  }
+}
+
+@media (max-width: 560px) {
+  .filtros {
+    padding: 20px;
+  }
+
+  .paginador {
+    gap: 8px;
+  }
+
+  .paginador :global(.boton) {
+    padding: 0 14px;
+  }
+}
+
+@keyframes entrar {
+  from { opacity: 0; transform: scale(0.97) translateY(14px); }
+  to { opacity: 1; transform: none; }
+}
+
+@keyframes aparecer {
+  0% { transform: scale(0.7); }
+  60% { transform: scale(1.15); }
+  100% { transform: scale(1); }
+}
+
+@keyframes caer {
+  from { opacity: 0; transform: translateY(-10px); }
+  to { opacity: 1; transform: none; }
+}
+
+@keyframes latir {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.5; }
+}

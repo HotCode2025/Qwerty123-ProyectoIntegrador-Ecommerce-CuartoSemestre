@@ -1,0 +1,73 @@
+.caja {
+  max-width: 900px;
+  padding: 20px;
+  border: 3px solid var(--tinta);
+  border-radius: 18px;
+  background: var(--blanco);
+  box-shadow: 5px 5px 0 var(--tinta);
+}
+
+.tituloCaja {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin: 0 0 14px;
+  font-size: 22px;
+}
+
+.grilla {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 14px;
+  margin-bottom: 18px;
+}
+
+.pista {
+  margin: 6px 0 0;
+  font-size: 13px;
+  color: var(--apagado);
+}
+
+/* Signo $ dentro del campo */
+.dinero {
+  position: relative;
+  display: block;
+}
+
+.dinero > span {
+  position: absolute;
+  left: 14px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-weight: 700;
+}
+
+.dinero :global(.entrada) {
+  padding-left: 30px;
+}
+
+.acciones {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  flex-wrap: wrap;
+  margin-bottom: 4px;
+}
+
+.listo {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 4px 12px;
+  border: 2px solid var(--tinta);
+  border-radius: 999px;
+  background: var(--verde);
+  font-weight: 700;
+  font-size: 13px;
+}
+
+@media (max-width: 760px) {
+  .grilla {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}

@@ -1,0 +1,346 @@
+.pantalla {
+  animation: entrar 0.45s cubic-bezier(0.3, 1.4, 0.5, 1);
+}
+
+.migas {
+  font-size: 14px;
+  margin: 0;
+  padding-top: 28px;
+}
+
+.detalle {
+  display: grid;
+  grid-template-columns: minmax(0, 1.1fr) minmax(0, 1fr);
+  gap: 48px;
+  padding: 24px 0 72px;
+}
+
+/* ---------- Imagen ---------- */
+.imagen {
+  position: relative;
+  aspect-ratio: 1 / 1;
+  border: 4px solid var(--tinta);
+  border-radius: 30px;
+  background: var(--crema);
+  box-shadow: 10px 10px 0 var(--tinta);
+  overflow: hidden;
+  align-self: start;
+}
+
+.foto {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.puntos {
+  position: absolute;
+  inset: 0;
+  background-image: radial-gradient(var(--tinta) 1.5px, transparent 1.5px);
+  background-size: 22px 22px;
+  opacity: 0.14;
+}
+
+.ilustracion {
+  position: absolute;
+  inset: 20%;
+  width: 60%;
+  height: 60%;
+  animation: tambalear 4s ease-in-out infinite;
+}
+
+.etiqueta {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  font-size: 14px;
+  font-weight: 700;
+  padding: 4px 12px;
+  border: 2px solid var(--tinta);
+  border-radius: 999px;
+  transform: rotate(-4deg);
+}
+
+.esqueleto {
+  aspect-ratio: 1 / 1;
+  border: 3px dashed var(--tinta);
+  border-radius: 30px;
+  background: var(--crema);
+  animation: latir 1.2s ease-in-out infinite;
+}
+
+/* ---------- Datos y compra ---------- */
+.info {
+  display: flex;
+  flex-direction: column;
+  gap: 22px;
+}
+
+.marca {
+  margin: 0;
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--apagado);
+}
+
+.nombre {
+  font-size: clamp(44px, 5vw, 76px);
+  margin: 6px 0 14px;
+}
+
+.precios {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px 14px;
+}
+
+.precioAnterior {
+  font-size: 20px;
+  font-weight: 700;
+  color: var(--apagado);
+  text-decoration: line-through;
+}
+
+.descuento {
+  font-size: 15px;
+  font-weight: 700;
+  padding: 4px 12px;
+  border: 3px solid var(--tinta);
+  border-radius: 999px;
+  background: var(--naranja);
+  transform: rotate(3deg);
+}
+
+.precio {
+  display: inline-block;
+  font-size: 36px;
+  padding: 4px 14px;
+  border: 3px solid var(--tinta);
+  border-radius: 12px;
+  background: var(--amarillo);
+  transform: rotate(-2deg);
+}
+
+.descripcion {
+  margin: 18px 0 0;
+}
+
+.grupo {
+  border: 0;
+  margin: 0;
+  padding: 0;
+  min-width: 0;
+}
+
+.tituloGrupo {
+  display: block;
+  padding: 0;
+  margin: 0 0 10px;
+  font-family: var(--fuente-display);
+  font-weight: 800;
+  font-size: 18px;
+}
+
+.talles {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.talle {
+  min-width: 60px;
+  min-height: 52px;
+  padding: 0 14px;
+  border: 3px solid var(--tinta);
+  border-radius: 14px;
+  background: var(--blanco);
+  font-weight: 700;
+  box-shadow: 3px 3px 0 var(--tinta);
+  transition: transform 0.12s, box-shadow 0.12s;
+}
+
+.talle:hover {
+  transform: translate(-2px, -2px);
+  box-shadow: 5px 5px 0 var(--tinta);
+}
+
+.talleActivo {
+  background: var(--amarillo);
+  animation: aparecer 0.3s;
+}
+
+.talleAgotado {
+  background: #ededed;
+  border-style: dashed;
+  box-shadow: none;
+  color: var(--apagado);
+}
+
+.caja {
+  border: 3px solid var(--tinta);
+  border-radius: 20px;
+  padding: 20px;
+  background: var(--blanco);
+}
+
+/* La leyenda de un fieldset con borde se dibuja sobre la línea: así queda adentro */
+.leyendaCaja {
+  float: left;
+  width: 100%;
+}
+
+.cajaAviso {
+  background: var(--hielo);
+  animation: caer 0.35s;
+}
+
+.tituloAviso {
+  margin: 0 0 12px;
+  font-weight: 700;
+}
+
+.formularioAviso {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.formularioAviso :global(.entrada) {
+  flex: 1 1 220px;
+  width: auto;
+}
+
+.grillaFormulario {
+  clear: both;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 16px;
+}
+
+.marcador {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px 16px;
+  border-radius: 12px;
+  background: var(--tinta);
+  color: var(--amarillo);
+  font-weight: 700;
+  font-size: 15px;
+  margin: 14px 0 0;
+}
+
+.cajaAviso :global(.alerta-error) {
+  margin-top: 12px;
+}
+
+.listo {
+  margin: 0;
+  font-weight: 700;
+  color: #14663f;
+  animation: caer 0.35s;
+}
+
+.botonAgregar {
+  justify-content: space-between;
+  min-height: 62px;
+  font-size: 18px;
+}
+
+/* ---------- Relacionados ---------- */
+.relacionados {
+  padding-bottom: 88px;
+}
+
+.tituloRelacionados {
+  font-size: 44px;
+  margin: 0 0 28px;
+}
+
+.grilla {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 24px;
+}
+
+/* ---------- Producto inexistente ---------- */
+.faltante {
+  text-align: center;
+  padding-top: 96px;
+  padding-bottom: 120px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+}
+
+.tituloFaltante {
+  font-size: clamp(44px, 6vw, 84px);
+  margin: 0;
+}
+
+.textoFaltante {
+  margin: 0;
+  font-size: 19px;
+}
+
+/* ---------- Responsive ---------- */
+@media (max-width: 1060px) {
+  .grilla {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 860px) {
+  .detalle {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 32px;
+  }
+
+  .grilla {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 14px;
+  }
+}
+
+@media (max-width: 560px) {
+  .grillaFormulario {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .precio {
+    font-size: 30px;
+  }
+
+  .tituloRelacionados {
+    font-size: 36px;
+  }
+}
+
+@keyframes entrar {
+  from { opacity: 0; transform: scale(0.97) translateY(14px); }
+  to { opacity: 1; transform: none; }
+}
+
+@keyframes tambalear {
+  0%, 100% { transform: rotate(-4deg); }
+  50% { transform: rotate(4deg) translateY(-8px); }
+}
+
+@keyframes aparecer {
+  0% { transform: scale(0.7); }
+  60% { transform: scale(1.15); }
+  100% { transform: scale(1); }
+}
+
+@keyframes caer {
+  from { opacity: 0; transform: translateY(-10px); }
+  to { opacity: 1; transform: none; }
+}
+
+@keyframes latir {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.5; }
+}
