@@ -1,0 +1,341 @@
+/* Piezas que comparten todas las pantallas del panel: encabezado, contadores, filtros, tablas y paginado */
+
+.pantalla {
+  animation: entrar 0.35s cubic-bezier(0.3, 1.4, 0.5, 1);
+}
+
+.migas {
+  margin: 0 0 4px;
+  font-size: 13px;
+  color: var(--apagado);
+}
+
+.migas a {
+  color: var(--apagado);
+}
+
+.cabecera {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  gap: 12px;
+  flex-wrap: wrap;
+  margin-bottom: 18px;
+}
+
+.titulo {
+  margin: 0;
+  font-size: clamp(36px, 4.5vw, 52px);
+}
+
+.tenue {
+  margin: 0;
+  font-size: 13px;
+  color: var(--apagado);
+}
+
+.botonFantasma {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 4px;
+  border: 0;
+  background: none;
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--apagado);
+}
+
+.botonFantasma:hover {
+  color: var(--tinta);
+  text-decoration: underline;
+}
+
+/* ---------- Contadores ---------- */
+.datos {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 12px;
+  margin-bottom: 18px;
+}
+
+.dato {
+  padding: 12px 14px;
+  border: 2.5px solid var(--tinta);
+  border-radius: 14px;
+  background: var(--blanco);
+  text-align: left;
+  transition: transform 0.12s, box-shadow 0.12s;
+}
+
+button.stat:hover {
+  transform: translate(-2px, -2px);
+  box-shadow: 4px 4px 0 var(--tinta);
+}
+
+.datoDestacado {
+  background: var(--crema);
+}
+
+.etiquetaDato {
+  display: block;
+  font-size: 13px;
+  color: var(--apagado);
+}
+
+.valorDato {
+  display: block;
+  margin-top: 6px;
+  font-size: 30px;
+}
+
+/* ---------- Filtros ---------- */
+.fichas {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 16px;
+}
+
+.ficha {
+  min-height: 40px;
+  padding: 0 14px;
+  border: 2.5px solid var(--tinta);
+  border-radius: 999px;
+  background: var(--blanco);
+  font-weight: 700;
+  font-size: 14px;
+  transition: transform 0.12s, background 0.12s;
+}
+
+.ficha:hover {
+  background: var(--crema);
+  transform: rotate(-3deg);
+}
+
+.fichaActiva,
+.fichaActiva:hover {
+  background: var(--amarillo);
+  box-shadow: 2px 2px 0 var(--tinta);
+  transform: none;
+}
+
+.busqueda {
+  position: relative;
+  width: min(320px, 100%);
+}
+
+.busqueda :global(.entrada) {
+  min-height: 46px;
+  padding-left: 40px;
+}
+
+.busqueda :global(.entrada):hover {
+  background: #fffbea;
+}
+
+.iconoBusqueda {
+  position: absolute;
+  left: 13px;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+/* ---------- Tablas ---------- */
+.tabla {
+  border: 3px solid var(--tinta);
+  border-radius: 18px;
+  background: var(--blanco);
+  box-shadow: 5px 5px 0 var(--tinta);
+  padding: 6px 12px;
+}
+
+/* Las columnas las define cada pantalla con la variable --columnas */
+.fila,
+.cabeceraFila {
+  display: grid;
+  grid-template-columns: var(--columnas);
+  align-items: center;
+  gap: 12px;
+  padding: 12px 8px;
+}
+
+.cabeceraFila {
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--apagado);
+}
+
+.fila {
+  border-top: 2px dashed var(--tinta);
+  border-radius: 10px;
+  text-decoration: none;
+  transition: background 0.12s;
+}
+
+a.row:hover {
+  background: var(--crema);
+}
+
+.filaApagada {
+  background: #f3f3f3;
+  color: #5a5a5a;
+}
+
+.persona {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  min-width: 0;
+}
+
+.persona span {
+  overflow-wrap: anywhere;
+}
+
+.chico {
+  display: block;
+  font-size: 13px;
+  color: var(--apagado);
+}
+
+.dinero {
+  font-weight: 700;
+  white-space: nowrap;
+}
+
+.sello {
+  display: inline-block;
+  padding: 2px 10px;
+  border: 2px solid var(--tinta);
+  border-radius: 999px;
+  font-size: 12px;
+  font-weight: 700;
+  white-space: nowrap;
+  justify-self: start;
+}
+
+/* Botón chico de las filas */
+.botonFila {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  min-height: 36px;
+  padding: 0 12px;
+  border: 2.5px solid var(--tinta);
+  border-radius: 10px;
+  background: var(--blanco);
+  font-weight: 700;
+  font-size: 13px;
+  box-shadow: 2px 2px 0 var(--tinta);
+  transition: transform 0.12s, box-shadow 0.12s, background 0.12s;
+  justify-self: start;
+}
+
+.botonFila:hover:not(:disabled) {
+  background: var(--crema);
+  transform: translate(-2px, -2px);
+  box-shadow: 4px 4px 0 var(--tinta);
+}
+
+.botonFila:disabled {
+  opacity: 0.5;
+  cursor: default;
+}
+
+.botonFilaAmarillo {
+  background: var(--amarillo);
+}
+
+.botonFilaAmarillo:hover:not(:disabled) {
+  background: var(--amarillo);
+}
+
+/* ---------- Paginado y estados vacíos ---------- */
+.pie {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+  flex-wrap: wrap;
+  margin-top: 16px;
+}
+
+.paginador {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.paginaActual {
+  padding: 4px 12px;
+  border: 2px solid var(--tinta);
+  border-radius: 999px;
+  background: var(--amarillo);
+  font-weight: 700;
+  font-size: 13px;
+}
+
+.vacio {
+  text-align: center;
+  padding: 40px 16px;
+  border: 3px dashed var(--tinta);
+  border-radius: 18px;
+}
+
+.tituloVacio {
+  margin: 0 0 6px;
+  font-size: 28px;
+}
+
+.esqueleto {
+  height: 260px;
+  border: 3px dashed var(--tinta);
+  border-radius: 18px;
+  background: var(--crema);
+  animation: latir 1.2s ease-in-out infinite;
+}
+
+.cargando {
+  opacity: 0.6;
+  transition: opacity 0.2s;
+}
+
+/* En celular cada fila se arma como una tarjeta y se oculta el encabezado de la tabla */
+@media (max-width: 760px) {
+  .datos {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .cabeceraFila {
+    display: none;
+  }
+
+  .fila {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px 14px;
+  }
+
+  .fila:first-of-type {
+    border-top: 0;
+  }
+
+  .persona {
+    flex-basis: 100%;
+  }
+
+  .flechaFila {
+    display: none;
+  }
+}
+
+@keyframes entrar {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: none; }
+}
+
+@keyframes latir {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.5; }
+}

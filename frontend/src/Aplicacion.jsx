@@ -11,6 +11,8 @@ import Ingresar from './paginas/Ingresar/Ingresar'
 import ResultadoPago from './paginas/ResultadoPago/ResultadoPago'
 import DetallePedido from './paginas/DetallePedido/DetallePedido'
 import MisPedidos from './paginas/MisPedidos/MisPedidos'
+import PlantillaAdmin from './componentes/PlantillaAdmin/PlantillaAdmin'
+import AdminNoEncontrada from './paginas/admin/AdminNoEncontrada'
 
 
 // Rutas del sitio (URLs en español). La tienda y el panel tienen cada uno su propia estructura
@@ -29,6 +31,14 @@ const enrutador = createBrowserRouter([
       { path: '/pago/resultado', element: <ResultadoPago /> },
       { path: '/mis-pedidos', element: <MisPedidos /> },
       { path: '/mis-pedidos/:id', element: <DetallePedido /> },
+    ],
+  },
+  {
+    // Panel de administración: PlantillaAdmin deja entrar solo a administradores
+    path: '/admin',
+    element: <PlantillaAdmin />,
+    children: [
+      { path: '*', element: <AdminNoEncontrada /> },
     ],
   },
 ])
