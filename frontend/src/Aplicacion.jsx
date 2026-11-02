@@ -15,6 +15,7 @@ import PlantillaAdmin from './componentes/PlantillaAdmin/PlantillaAdmin'
 import AdminNoEncontrada from './paginas/admin/AdminNoEncontrada'
 import AdminDetallePedido from './paginas/admin/AdminDetallePedido'
 import AdminPedidos from './paginas/admin/AdminPedidos'
+import AdminUsuarios from './paginas/admin/AdminUsuarios'
 
 
 // Rutas del sitio (URLs en español). La tienda y el panel tienen cada uno su propia estructura
@@ -43,6 +44,7 @@ const enrutador = createBrowserRouter([
       { path: '*', element: <AdminNoEncontrada /> },
       { index: true, element: <AdminPedidos /> },
       { path: 'pedidos/:id', element: <AdminDetallePedido /> },
+      { path: 'usuarios', element: <AdminUsuarios /> },
     ],
   },
 ])
