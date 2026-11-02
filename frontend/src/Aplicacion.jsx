@@ -14,6 +14,7 @@ import MisPedidos from './paginas/MisPedidos/MisPedidos'
 import PlantillaAdmin from './componentes/PlantillaAdmin/PlantillaAdmin'
 import AdminNoEncontrada from './paginas/admin/AdminNoEncontrada'
 import AdminCatalogo from './paginas/admin/AdminCatalogo'
+import AdminAjustes from './paginas/admin/AdminAjustes'
 import AdminDetallePedido from './paginas/admin/AdminDetallePedido'
 import AdminPedidos from './paginas/admin/AdminPedidos'
 import AdminUsuarios from './paginas/admin/AdminUsuarios'
@@ -51,6 +52,7 @@ const enrutador = createBrowserRouter([
       { path: 'productos/:id', element: <PaginaAdminProducto /> },
       { path: 'catalogo', element: <AdminCatalogo /> },
       { path: 'usuarios', element: <AdminUsuarios /> },
+      { path: 'ajustes', element: <AdminAjustes /> },
     ],
   },
 ])
