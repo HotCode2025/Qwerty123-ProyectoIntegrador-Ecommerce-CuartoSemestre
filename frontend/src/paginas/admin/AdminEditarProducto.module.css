@@ -1,0 +1,310 @@
+.sellosCabecera {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.disposicion {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 320px;
+  gap: 24px;
+  align-items: start;
+}
+
+.lateral {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.caja {
+  padding: 20px;
+  border: 3px solid var(--tinta);
+  border-radius: 18px;
+  background: var(--blanco);
+  box-shadow: 5px 5px 0 var(--tinta);
+}
+
+.tituloCaja {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin: 0 0 14px;
+  font-size: 22px;
+}
+
+/* ---------- Datos ---------- */
+.grilla {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 14px;
+}
+
+.ancho {
+  grid-column: 1 / -1;
+}
+
+.areaTexto {
+  min-height: 90px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  resize: vertical;
+}
+
+.pista {
+  display: block;
+  font-size: 13px;
+  font-weight: 400;
+  color: var(--apagado);
+}
+
+label .pista {
+  display: inline;
+}
+
+.opcion .pista {
+  display: block;
+}
+
+.dinero {
+  position: relative;
+  display: block;
+}
+
+.dinero > span {
+  position: absolute;
+  left: 14px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-weight: 700;
+}
+
+.dinero :global(.entrada) {
+  padding-left: 30px;
+}
+
+.opciones {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 10px;
+  margin: 18px 0;
+}
+
+.opcion {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  padding: 10px 12px;
+  border: 2.5px solid var(--tinta);
+  border-radius: 12px;
+  background: var(--crema);
+  cursor: pointer;
+  transition: background 0.12s;
+}
+
+.opcion:hover {
+  background: #ffe9a8;
+}
+
+.opcion input {
+  width: 18px;
+  height: 18px;
+  margin-top: 2px;
+  accent-color: var(--tinta);
+  flex: none;
+}
+
+.opcionApagada {
+  background: #f3f3f3;
+  cursor: default;
+}
+
+.opcionApagada:hover {
+  background: #f3f3f3;
+}
+
+/* Precio de oferta: aparece al tildar "En oferta" */
+.campoOferta {
+  max-width: 320px;
+  margin: -6px 0 18px;
+}
+
+.acciones {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  flex-wrap: wrap;
+}
+
+.listo {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  margin: 10px 0 0;
+  padding: 4px 12px;
+  border: 2px solid var(--tinta);
+  border-radius: 999px;
+  background: var(--verde);
+  font-weight: 700;
+  font-size: 13px;
+}
+
+.acciones .listo {
+  margin: 0;
+}
+
+/* Eliminar queda a la derecha, separado de Guardar para no tocarlo sin querer */
+.eliminar {
+  margin-left: auto;
+}
+
+.eliminar:hover {
+  background: #ffe3de;
+}
+
+/* ---------- Foto ---------- */
+.soltar {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  padding: 0;
+  border: 3px dashed var(--tinta);
+  border-radius: 14px;
+  background: var(--crema);
+  overflow: hidden;
+  display: grid;
+  place-items: center;
+  margin-bottom: 8px;
+  transition: background 0.12s;
+}
+
+.soltar:hover,
+.soltarActivo {
+  background: #ffe9a8;
+}
+
+.foto {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.textoSoltar {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+  max-width: 80%;
+  font-weight: 700;
+  font-size: 14px;
+  text-align: center;
+}
+
+/* Sobre una foto ya cargada, el texto aparece al pasar el cursor */
+.soltarEncima {
+  padding: 8px 14px;
+  border: 2.5px solid var(--tinta);
+  border-radius: 12px;
+  background: var(--blanco);
+  opacity: 0;
+  transition: opacity 0.15s;
+}
+
+.soltar:hover .soltarEncima,
+.soltar:focus-visible .soltarEncima,
+.soltarActivo .soltarEncima {
+  opacity: 1;
+}
+
+/* ---------- Stock ---------- */
+.talles {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(78px, 1fr));
+  gap: 10px;
+}
+
+.talle {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  font-weight: 700;
+  font-size: 14px;
+}
+
+.talle :global(.entrada) {
+  min-height: 44px;
+  padding: 0 10px;
+}
+
+.cero {
+  background: #ffe3de !important;
+}
+
+.total {
+  margin: 12px 0 6px;
+  font-weight: 700;
+}
+
+.esperando {
+  display: flex;
+  gap: 6px;
+  align-items: flex-start;
+  margin: 0 0 8px;
+  padding: 8px 10px;
+  border: 2px solid var(--tinta);
+  border-radius: 10px;
+  background: var(--hielo);
+  font-size: 13px;
+}
+
+.completo {
+  width: 100%;
+  justify-content: center;
+  margin-top: 6px;
+}
+
+.nota {
+  margin: 0;
+  padding: 10px 12px;
+  border: 2px solid var(--tinta);
+  border-radius: 10px;
+  background: var(--crema);
+  font-weight: 700;
+}
+
+.bloqueado {
+  display: flex;
+  gap: 10px;
+  align-items: flex-start;
+  background: var(--crema);
+  box-shadow: none;
+  border-style: dashed;
+}
+
+.bloqueado p {
+  margin: 0;
+  font-weight: 700;
+}
+
+@media (max-width: 1060px) {
+  .disposicion {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .lateral {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 760px) {
+  .grilla,
+  .opciones,
+  .lateral {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}
