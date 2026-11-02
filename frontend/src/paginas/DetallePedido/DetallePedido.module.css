@@ -1,0 +1,141 @@
+.pantalla {
+  padding-bottom: 88px;
+  animation: entrar 0.45s cubic-bezier(0.3, 1.4, 0.5, 1);
+}
+
+.migas {
+  font-size: 14px;
+  margin: 0;
+  padding-top: 28px;
+}
+
+.cabecera {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  flex-wrap: wrap;
+  margin: 6px 0 4px;
+}
+
+.titulo {
+  font-size: clamp(48px, 7vw, 96px);
+  margin: 0;
+}
+
+.aviso {
+  margin: 24px 0 0;
+  padding: 14px 18px;
+  border: 3px solid var(--tinta);
+  border-radius: 14px;
+  background: var(--hielo);
+  font-weight: 700;
+}
+
+/* ---------- Contenido ---------- */
+.disposicion {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 400px;
+  gap: 36px;
+  margin-top: 36px;
+}
+
+.principal {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.caja {
+  padding: 22px;
+  border: 3px solid var(--tinta);
+  border-radius: 20px;
+  background: var(--blanco);
+  box-shadow: 5px 5px 0 var(--tinta);
+}
+
+.tituloCaja {
+  font-size: 28px;
+  margin: 0 0 14px;
+}
+
+.items {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 16px;
+  padding: 12px 0;
+}
+
+.item + .item {
+  border-top: 2px dashed var(--tinta);
+}
+
+.nombreItem {
+  font-weight: 700;
+  font-size: 17px;
+}
+
+.personalizado {
+  font-weight: 700;
+}
+
+.totalItem {
+  font-size: 22px;
+  white-space: nowrap;
+}
+
+.direccion {
+  margin: 0 0 6px;
+}
+
+.esqueleto {
+  height: 420px;
+  margin-top: 36px;
+  border: 3px dashed var(--tinta);
+  border-radius: 22px;
+  background: var(--crema);
+  animation: latir 1.2s ease-in-out infinite;
+}
+
+/* ---------- Pedido inexistente ---------- */
+.faltante {
+  text-align: center;
+  padding-top: 96px;
+  padding-bottom: 120px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+}
+
+.tituloFaltante {
+  font-size: clamp(44px, 6vw, 84px);
+  margin: 0;
+}
+
+.textoFaltante {
+  margin: 0;
+  font-size: 19px;
+}
+
+@media (max-width: 860px) {
+  .disposicion {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}
+
+@keyframes entrar {
+  from { opacity: 0; transform: scale(0.97) translateY(14px); }
+  to { opacity: 1; transform: none; }
+}
+
+@keyframes latir {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.5; }
+}

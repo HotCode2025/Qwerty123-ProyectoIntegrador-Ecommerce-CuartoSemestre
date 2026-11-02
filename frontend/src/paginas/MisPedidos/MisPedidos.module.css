@@ -1,0 +1,154 @@
+.pantalla {
+  animation: entrar 0.45s cubic-bezier(0.3, 1.4, 0.5, 1);
+}
+
+.titulo {
+  font-size: clamp(56px, 8vw, 112px);
+  margin: 0;
+  padding-top: 36px;
+}
+
+.disposicion {
+  display: grid;
+  grid-template-columns: 300px minmax(0, 1fr);
+  gap: 36px;
+  padding: 28px 0 88px;
+}
+
+/* ---------- Cuenta ---------- */
+.cuenta {
+  padding: 24px;
+  border: 3px solid var(--tinta);
+  border-radius: 22px;
+  background: var(--crema);
+  box-shadow: 6px 6px 0 var(--tinta);
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  align-self: start;
+}
+
+.tituloCuenta {
+  font-size: 30px;
+  margin: 0 0 8px;
+}
+
+.nombre {
+  margin: 0;
+  font-weight: 700;
+  font-size: 18px;
+}
+
+.salir {
+  justify-content: center;
+  margin-top: 14px;
+}
+
+/* ---------- Pedidos ---------- */
+.lista {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.pedido {
+  display: grid;
+  gap: 10px;
+  padding: 20px 22px;
+  border: 3px solid var(--tinta);
+  border-radius: 20px;
+  background: var(--blanco);
+  box-shadow: 5px 5px 0 var(--tinta);
+  text-decoration: none;
+  animation: entrar-rebotando 0.5s both;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.pedido:hover {
+  transform: translate(-3px, -3px);
+  box-shadow: 8px 8px 0 var(--tinta);
+}
+
+.pedido:active {
+  transform: translate(4px, 4px);
+  box-shadow: 1px 1px 0 var(--tinta);
+}
+
+.superiorPedido,
+.infoPedido {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.numeroPedido {
+  font-size: 30px;
+}
+
+.totalPedido {
+  font-size: 26px;
+}
+
+.enlacePedido {
+  font-weight: 700;
+  text-decoration: underline;
+}
+
+.esqueleto {
+  height: 130px;
+  border: 3px dashed var(--tinta);
+  border-radius: 20px;
+  background: var(--crema);
+  animation: latir 1.2s ease-in-out infinite;
+}
+
+.vacio {
+  text-align: center;
+  padding: 56px 16px;
+  border: 3px dashed var(--tinta);
+  border-radius: 22px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+}
+
+.tituloVacio {
+  font-size: 40px;
+  margin: 0;
+}
+
+.textoVacio {
+  margin: 0;
+}
+
+@media (max-width: 860px) {
+  .disposicion {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  /* En celular primero los pedidos y la cuenta al final */
+  .cuenta {
+    order: 1;
+  }
+}
+
+@keyframes entrar {
+  from { opacity: 0; transform: scale(0.97) translateY(14px); }
+  to { opacity: 1; transform: none; }
+}
+
+@keyframes entrar-rebotando {
+  0% { opacity: 0; transform: scale(0.9) rotate(-2deg); }
+  100% { opacity: 1; transform: none; }
+}
+
+@keyframes latir {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.5; }
+}

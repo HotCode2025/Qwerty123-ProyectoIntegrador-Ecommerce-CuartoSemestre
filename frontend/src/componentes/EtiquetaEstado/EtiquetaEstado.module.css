@@ -1,0 +1,10 @@
+.etiqueta {
+  display: inline-block;
+  padding: 4px 12px;
+  border: 2px solid var(--tinta);
+  border-radius: 999px;
+  font-size: 14px;
+  font-weight: 700;
+  white-space: nowrap;
+  transform: rotate(-2deg);
+}
