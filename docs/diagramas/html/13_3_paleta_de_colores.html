@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<title>Paleta de colores</title>
+<link rel="stylesheet" href="estilo.css">
+<style>
+body { width: 1000px; }
+.m { height: 64px; border: 3px solid #111; border-radius: 10px; }
+.n { margin: 6px 0 0; font-weight: 700; font-size: 15px; }
+.u { margin: 0; font-size: 13px; color: #3d3d3d; }
+</style>
+</head>
+<body>
+<div class="lamina">
+  <p class="titulo">Paleta de colores</p>
+  <p class="bajada">Variables CSS de estilos/global.css · Diseño "Cancha pop"</p>
+  <div style="display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:14px">
+    <div><div class="m" style="background:#111"></div><p class="n">--tinta · #111111</p><p class="u">Texto, bordes, sombras</p></div>
+    <div><div class="m" style="background:#3d3d3d"></div><p class="n">--apagado · #3D3D3D</p><p class="u">Texto secundario</p></div>
+    <div><div class="m" style="background:#fff"></div><p class="n">--blanco · #FFFFFF</p><p class="u">Fondo, tarjetas, campos</p></div>
+    <div><div class="m" style="background:#ffc933"></div><p class="n">--amarillo · #FFC933</p><p class="u">Botones, precios, menú del panel</p></div>
+    <div><div class="m" style="background:#2bb673"></div><p class="n">--verde · #2BB673</p><p class="u">Fútbol, pagado, envío gratis</p></div>
+    <div><div class="m" style="background:#ff7a2f"></div><p class="n">--naranja · #FF7A2F</p><p class="u">Básquet, ofertas</p></div>
+    <div><div class="m" style="background:#7fb2ff"></div><p class="n">--celeste · #7FB2FF</p><p class="u">Pádel, pedido enviado</p></div>
+    <div><div class="m" style="background:#3d7bff"></div><p class="n">--azul · #3D7BFF</p><p class="u">Foco del teclado, cancha</p></div>
+    <div><div class="m" style="background:#fff1c2"></div><p class="n">--crema · #FFF1C2</p><p class="u">Fondos suaves, talle pelota</p></div>
+    <div><div class="m" style="background:#d5f2e3"></div><p class="n">--menta · #D5F2E3</p><p class="u">Fondos suaves, talle calzado</p></div>
+    <div><div class="m" style="background:#dce8ff"></div><p class="n">--hielo · #DCE8FF</p><p class="u">Fondos suaves, talle ropa</p></div>
+    <div><div class="m" style="background:#ff8a7a"></div><p class="n">--error · #FF8A7A</p><p class="u">Errores, cancelado</p></div>
+  </div>
+  <div style="display:flex;align-items:center;gap:12px;margin-top:16px"><div style="width:64px;height:34px;border:3px solid #111;border-radius:8px;background:#0070a8"></div><p style="margin:0;font-size:15px"><b>--mercadopago · #0070A8</b> · solo el botón "Pagar con Mercado Pago"</p></div>
+</div>
+</body>
+</html>

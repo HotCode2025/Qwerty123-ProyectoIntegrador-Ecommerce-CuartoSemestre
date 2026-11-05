@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<title>Modelo de datos</title>
+<link rel="stylesheet" href="estilo.css">
+<style>
+body { width: 1100px; }
+.tb { border: 3px solid #111; border-radius: 12px; background: #fff; box-shadow: 4px 4px 0 #111; overflow: hidden; }
+.tb p { margin: 0; }
+.tb .n { font-weight: 700; font-size: 15px; padding: 7px 11px; border-bottom: 3px solid #111; }
+.tb .c { font-size: 13px; padding: 7px 11px; line-height: 1.55; }
+.k { font-weight: 700; }
+.zona { border: 3px dashed #111; border-radius: 14px; padding: 14px; }
+.zt { font-weight: 700; font-size: 15px; margin: 0 0 12px; }
+.rel { font-size: 14px; line-height: 1.7; margin: 0; }
+</style>
+</head>
+<body>
+<div class="lamina">
+  <p class="titulo">Modelo de datos</p>
+  <p class="bajada">MySQL · 10 tablas · <span class="k">PK</span> clave primaria · <span class="k">FK</span> clave foránea</p>
+  <div class="zona" style="background:#dce8ff">
+    <p class="zt">Catálogo</p>
+    <div style="display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:12px">
+      <div class="tb"><p class="n" style="background:#ffc933">productos</p><p class="c"><span class="k">PK</span> id<br>nombre, descripcion<br>precio, precio_oferta<br>deporte<br><span class="k">FK</span> categoria_id<br><span class="k">FK</span> marca_id<br>imagen_url<br>personalizable, destacado<br>habilitado</p></div>
+      <div class="tb"><p class="n" style="background:#ffc933">stock_productos</p><p class="c"><span class="k">PK</span> id<br><span class="k">FK</span> producto_id<br><span class="k">FK</span> talle_id<br>cantidad</p></div>
+      <div class="tb"><p class="n" style="background:#ffc933">talles</p><p class="c"><span class="k">PK</span> id<br>tipo_talle<br>etiqueta<br>orden</p></div>
+      <div class="tb"><p class="n" style="background:#ffc933">categorias</p><p class="c"><span class="k">PK</span> id<br>nombre<br>tipo_talle</p></div>
+      <div class="tb"><p class="n" style="background:#ffc933">marcas</p><p class="c"><span class="k">PK</span> id<br>nombre</p></div>
+    </div>
+  </div>
+  <div style="display:grid;grid-template-columns:minmax(0,3fr) minmax(0,2fr);gap:14px;margin-top:14px">
+    <div class="zona" style="background:#d5f2e3">
+      <p class="zt">Clientes y pedidos</p>
+      <div style="display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px">
+        <div class="tb"><p class="n" style="background:#2bb673">usuarios</p><p class="c"><span class="k">PK</span> id<br>nombre, apellido<br>email<br>contrasena_hash<br>telefono<br>rol, habilitado</p></div>
+        <div class="tb"><p class="n" style="background:#2bb673">pedidos</p><p class="c"><span class="k">PK</span> id<br><span class="k">FK</span> usuario_id<br>estado<br>subtotal, recargo<br>costo_envio, total<br>datos de envío<br>mp_preferencia_id<br>mp_pago_id</p></div>
+        <div class="tb"><p class="n" style="background:#2bb673">items_pedido</p><p class="c"><span class="k">PK</span> id<br><span class="k">FK</span> pedido_id<br><span class="k">FK</span> producto_id<br><span class="k">FK</span> talle_id<br>cantidad<br>precio_unitario<br>recargo_unitario<br>nombre y número</p></div>
+      </div>
+    </div>
+    <div class="zona" style="background:#fff1c2">
+      <p class="zt">Tienda</p>
+      <div style="display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px">
+        <div class="tb"><p class="n" style="background:#ff7a2f">avisos_stock</p><p class="c"><span class="k">PK</span> id<br>email<br><span class="k">FK</span> producto_id<br><span class="k">FK</span> talle_id<br>notificado</p></div>
+        <div class="tb"><p class="n" style="background:#ff7a2f">ajustes_tienda</p><p class="c"><span class="k">PK</span> id (única fila)<br>costo_envio<br>envio_gratis_desde<br>recargo_personalizacion</p></div>
+      </div>
+    </div>
+  </div>
+  <div style="border:3px solid #111;border-radius:12px;padding:12px 16px;margin-top:14px">
+    <p class="zt" style="margin-bottom:4px">Relaciones</p>
+    <div style="display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:0 24px">
+      <p class="rel">Una <b>categoría</b> y una <b>marca</b> tienen muchos productos</p>
+      <p class="rel">Un <b>producto</b> tiene stock por cada <b>talle</b></p>
+      <p class="rel">Un <b>usuario</b> hace muchos <b>pedidos</b></p>
+      <p class="rel">Un <b>pedido</b> tiene muchos <b>ítems</b> (producto + talle)</p>
+      <p class="rel">Un <b>aviso de stock</b> espera un producto en un talle</p>
+      <p class="rel"><b>ajustes_tienda</b> no se relaciona: guarda envío y recargo</p>
+    </div>
+  </div>
+</div>
+</body>
+</html>

@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<title>Proceso de compra</title>
+<link rel="stylesheet" href="estilo.css">
+<style>
+body { width: 760px; }
+.fila { display: grid; grid-template-columns: minmax(0,1.3fr) 76px minmax(0,1fr); align-items: center; }
+.pa { border: 3px solid #111; border-radius: 12px; background: #dce8ff; box-shadow: 4px 4px 0 #111; padding: 12px; text-align: center; font-size: 16px; font-weight: 700; }
+.ex { border-radius: 999px; background: #2bb673; }
+.de { background: #ffc933; border-radius: 999px; border-style: dashed; }
+.al { border: 3px solid #111; border-radius: 12px; background: #ff8a7a; box-shadow: 4px 4px 0 #111; padding: 12px; text-align: center; font-size: 16px; font-weight: 700; }
+.fl { text-align: center; font-weight: 700; font-size: 20px; line-height: 1; padding: 6px 0; }
+.si { font-size: 14px; font-weight: 700; color: #1d7a4d; margin-left: 6px; }
+.no { font-size: 14px; font-weight: 700; text-align: center; }
+</style>
+</head>
+<body>
+<div class="lamina">
+  <p class="titulo" style="text-align:center">Proceso de compra</p>
+  <p class="bajada" style="text-align:center">Golden Point · recorrido del cliente</p>
+  <div class="fila"><div class="pa ex">Ingresa a la tienda</div><div></div><div></div></div>
+  <div class="fila"><div class="fl">↓</div><div></div><div></div></div>
+  <div class="fila"><div class="pa">Inicio con destacados por deporte</div><div></div><div></div></div>
+  <div class="fila"><div class="fl">↓</div><div></div><div></div></div>
+  <div class="fila"><div class="pa">Filtra por deporte, talle, marca y precio</div><div></div><div></div></div>
+  <div class="fila"><div class="fl">↓</div><div></div><div></div></div>
+  <div class="fila"><div class="pa">Ficha de producto con talles</div><div></div><div></div></div>
+  <div class="fila"><div class="fl">↓</div><div></div><div></div></div>
+  <div class="fila"><div class="pa de">¿Hay stock del talle?</div><div class="no">No →</div><div class="al">Avisarme cuando llegue</div></div>
+  <div class="fila"><div class="fl">↓<span class="si">Sí</span></div><div></div><div></div></div>
+  <div class="fila"><div class="pa">Agrega el producto al carrito</div><div></div><div></div></div>
+  <div class="fila"><div class="fl">↓</div><div></div><div></div></div>
+  <div class="fila"><div class="pa">Revisa el carrito</div><div></div><div></div></div>
+  <div class="fila"><div class="fl">↓</div><div></div><div></div></div>
+  <div class="fila"><div class="pa de">¿Tiene cuenta?</div><div class="no">No →</div><div class="al">Crea una cuenta</div></div>
+  <div class="fila"><div class="fl">↓<span class="si">Sí</span></div><div></div><div class="fl" style="font-size:15px">↙ vuelve</div></div>
+  <div class="fila"><div class="pa">Carga los datos de envío</div><div></div><div></div></div>
+  <div class="fila"><div class="fl">↓</div><div></div><div></div></div>
+  <div class="fila"><div class="pa" style="background:#0070a8;color:#fff">Paga con Mercado Pago y confirma</div><div></div><div></div></div>
+  <div class="fila"><div class="fl">↓</div><div></div><div></div></div>
+  <div class="fila"><div class="pa ex">Pedido generado y mail de confirmación</div><div></div><div></div></div>
+</div>
+</body>
+</html>
