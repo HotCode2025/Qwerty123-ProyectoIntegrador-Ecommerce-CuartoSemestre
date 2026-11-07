@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<title>Tipografía</title>
+<link rel="stylesheet" href="estilo.css">
+<style>
+body { width: 1000px; }
+.dis { font-family: 'Bricolage Grotesque', sans-serif; font-weight: 800; letter-spacing: -0.03em; }
+.fam { border: 3px solid #111; border-radius: 12px; padding: 14px 16px; }
+.et { margin: 0; font-size: 13px; font-weight: 700; }
+.uso { font-size: 13px; color: #3d3d3d; }
+</style>
+</head>
+<body>
+<div class="lamina">
+  <p class="titulo">Tipografía</p>
+  <p class="bajada">Dos familias de Google Fonts · --fuente-display y --fuente-texto</p>
+  <div style="display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px">
+    <div class="fam" style="background:#fff1c2">
+      <p class="et">TÍTULOS Y PRECIOS</p>
+      <p class="dis" style="font-size:48px;line-height:.95;margin:8px 0">Bricolage Grotesque</p>
+      <p style="margin:0;font-size:14px">Peso 800 · interletra -0,03 em · interlineado 0,92</p>
+      <p class="dis" style="font-size:30px;margin:12px 0 0">Aa Bb Cc 0123 $ 100.000</p>
+    </div>
+    <div class="fam" style="background:#dce8ff">
+      <p class="et">TEXTO, BOTONES Y FORMULARIOS</p>
+      <p style="font-weight:700;font-size:40px;line-height:1;margin:10px 0">Space Grotesk</p>
+      <p style="margin:0;font-size:14px">Pesos 400 y 700 · base 16 px · interlineado 1,55</p>
+      <p style="font-size:24px;margin:12px 0 0">Aa Bb Cc 0123 · Ñ á é í ó ú</p>
+    </div>
+  </div>
+  <p style="margin:20px 0 10px;font-weight:700;font-size:16px">Cómo se usan</p>
+  <div style="display:grid;grid-template-columns:190px minmax(0,1fr);gap:10px 16px;align-items:baseline">
+    <span class="uso">Título de pantalla (H1)</span><span class="dis" style="font-size:48px;line-height:1">¡A la cancha!</span>
+    <span class="uso">Subtítulo (H2)</span><span class="dis" style="font-size:30px">Lo más buscado</span>
+    <span class="uso">Precio</span><span class="dis" style="font-size:28px">$ 96.000</span>
+    <span class="uso">Texto base 16 px</span><span style="font-size:16px">Poné tu nombre en la camiseta y recibila en tu casa.</span>
+    <span class="uso">Botón 16 px · 700</span><span><span style="display:inline-block;border:3px solid #111;border-radius:12px;background:#ffc933;box-shadow:4px 4px 0 #111;padding:7px 18px;font-weight:700;font-size:16px">Ver catálogo</span></span>
+    <span class="uso">Texto chico 14 px</span><span style="font-size:14px;color:#3d3d3d">Adidas · Camisetas</span>
+  </div>
+</div>
+</body>
+</html>

@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<title>Tecnologías y arquitectura</title>
+<link rel="stylesheet" href="estilo.css">
+<style>
+body { width: 1100px; }
+.cj { border: 3px solid #111; border-radius: 12px; padding: 12px 14px; box-shadow: 4px 4px 0 #111; }
+.cj b { display: block; font-size: 17px; }
+.cj span { display: block; font-size: 14px; color: #3d3d3d; line-height: 1.4; }
+.cj i { display: inline-block; font-style: normal; font-size: 12px; font-weight: 700; border: 2px solid #111; border-radius: 999px; padding: 1px 9px; margin-bottom: 6px; background: #fff; }
+.fl { display: flex; align-items: center; justify-content: center; font-weight: 700; font-size: 24px; }
+.grilla { display: grid; grid-template-columns: minmax(0,1fr) 30px minmax(0,1.2fr) 30px minmax(0,1.3fr) 30px minmax(0,1fr); }
+</style>
+</head>
+<body>
+<div class="lamina">
+  <p class="titulo">Tecnologías y arquitectura</p>
+  <p class="bajada">Cómo viaja una visita desde el celular hasta la base de datos</p>
+  <div class="grilla" style="align-items:stretch">
+    <div class="cj" style="background:#fff"><i>Cliente</i><b>Navegador</b><span>Celular o PC · Chrome, Firefox, Safari</span></div>
+    <div class="fl">→</div>
+    <div class="cj" style="background:#dce8ff"><i>Vercel</i><b>Frontend</b><span>React 19 · Vite · React Router 7 · CSS Modules</span></div>
+    <div class="fl">→</div>
+    <div class="cj" style="background:#ffc933"><i>Render · Docker</i><b>Backend · API REST</b><span>Java 21 · Spring Boot 4.1 · Spring Security + JWT · JPA · Swagger</span></div>
+    <div class="fl">→</div>
+    <div class="cj" style="background:#d5f2e3"><i>Aiven</i><b>Base de datos</b><span>MySQL 8 · 10 tablas</span></div>
+  </div>
+  <div class="grilla"><div></div><div></div><div></div><div></div><div class="fl" style="height:38px">↓</div><div></div><div></div></div>
+  <div style="display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px">
+    <div class="cj" style="background:#fff1c2"><i>Pagos</i><b>Mercado Pago</b><span>Checkout Pro con cuentas de prueba · webhook que confirma el pago</span></div>
+    <div class="cj" style="background:#fff1c2"><i>Correo</i><b>Brevo</b><span>Confirmación del pedido · aviso de reposición de stock</span></div>
+    <div class="cj" style="background:#fff1c2"><i>Imágenes</i><b>Cloudinary</b><span>Fotos de productos optimizadas para datos móviles</span></div>
+  </div>
+  <div style="display:flex;align-items:center;gap:12px;margin-top:16px;border:3px dashed #111;border-radius:12px;padding:10px 14px">
+    <span style="font-weight:700;font-size:16px">Git y GitHub</span>
+    <span style="font-size:14px;color:#3d3d3d">Cada push a la rama main publica solo el frontend en Vercel y el backend en Render</span>
+  </div>
+</div>
+</body>
+</html>

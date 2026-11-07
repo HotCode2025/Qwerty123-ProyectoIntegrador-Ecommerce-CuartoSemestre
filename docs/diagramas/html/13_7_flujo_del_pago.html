@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<title>Flujo del pago con Mercado Pago</title>
+<link rel="stylesheet" href="estilo.css">
+<style>
+body { width: 1100px; }
+.g { display: grid; grid-template-columns: 34px repeat(4,minmax(0,1fr)); gap: 10px; align-items: center; }
+.cab { border: 3px solid #111; border-radius: 12px; box-shadow: 4px 4px 0 #111; padding: 8px; text-align: center; font-weight: 700; font-size: 15px; }
+.p { border: 2.5px solid #111; border-radius: 10px; padding: 8px 10px; font-size: 14px; line-height: 1.35; background: #fff; }
+.n { width: 32px; height: 32px; border: 2.5px solid #111; border-radius: 50%; display: grid; place-items: center; font-weight: 700; font-size: 13px; background: #ffc933; }
+.sep { grid-column: 1/-1; border-top: 3px dashed #111; margin: 8px 0 2px; padding-top: 8px; font-weight: 700; font-size: 15px; }
+</style>
+</head>
+<body>
+<div class="lamina">
+  <p class="titulo">Flujo del pago con Mercado Pago</p>
+  <p class="bajada">Checkout Pro con cuentas de prueba · los datos de la tarjeta nunca pasan por Golden Point</p>
+  <div class="g" style="margin-bottom:10px"><div></div><div class="cab" style="background:#fff">Cliente</div><div class="cab" style="background:#dce8ff">Tienda (frontend)</div><div class="cab" style="background:#ffc933">Backend</div><div class="cab" style="background:#0070a8;color:#fff">Mercado Pago</div></div>
+  <div style="display:flex;flex-direction:column;gap:9px">
+    <div class="g"><div class="n">1</div><div class="p">Carga la dirección y toca "Pagar con Mercado Pago"</div><div></div><div></div><div></div></div>
+    <div class="g"><div class="n">2</div><div></div><div class="p">Envía el carrito y la dirección</div><div></div><div></div></div>
+    <div class="g"><div class="n">3</div><div></div><div></div><div class="p">Recalcula precios y stock, crea el pedido en <b>Pendiente de pago</b></div><div></div></div>
+    <div class="g"><div class="n">4</div><div></div><div></div><div class="p">Pide una preferencia de pago</div><div class="p">Devuelve el link de pago</div></div>
+    <div class="g"><div class="n">5</div><div class="p">Paga en Mercado Pago (tarjeta, dinero en cuenta o transferencia)</div><div></div><div></div><div class="p">Procesa el pago</div></div>
+    <div class="sep">El pago se confirma por dos caminos (el que llegue primero; nunca se aplica dos veces)</div>
+    <div class="g"><div class="n">6a</div><div class="p">Vuelve a la tienda</div><div class="p">Pantalla de resultado: pide confirmar el pago</div><div class="p">Consulta el pago a Mercado Pago</div><div class="p">Responde estado y monto</div></div>
+    <div class="g"><div class="n">6b</div><div class="p" style="background:#fff1c2">Cierra la pestaña sin volver</div><div></div><div class="p">Recibe el aviso (webhook) y consulta el pago</div><div class="p">Avisa el pago al backend</div></div>
+    <div class="g"><div class="n">7</div><div></div><div></div><div class="p" style="background:#2bb673">Si está aprobado y cubre el total: pedido <b>Pagado</b>, descuenta stock</div><div></div></div>
+    <div class="g"><div class="n">8</div><div class="p" style="background:#d5f2e3">Recibe el mail de confirmación (Brevo)</div><div class="p">Ve el pedido en Mis pedidos</div><div class="p">Envía el mail con Brevo</div><div></div></div>
+  </div>
+</div>
+</body>
+</html>

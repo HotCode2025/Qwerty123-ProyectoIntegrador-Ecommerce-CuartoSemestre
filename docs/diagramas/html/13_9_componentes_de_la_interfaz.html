@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<title>Componentes de la interfaz</title>
+<link rel="stylesheet" href="estilo.css">
+<style>
+body { width: 1100px; }
+.bl { border: 3px dashed #111; border-radius: 14px; padding: 14px; }
+.bt { font-weight: 700; font-size: 15px; margin: 0 0 12px; }
+.btn { display: inline-flex; align-items: center; gap: 8px; border: 3px solid #111; border-radius: 14px; padding: 10px 20px; font-weight: 700; font-size: 16px; box-shadow: 5px 5px 0 #111; }
+.fi { display: inline-block; border: 2.5px solid #111; border-radius: 999px; padding: 6px 14px; font-weight: 700; font-size: 14px; background: #fff; }
+.se { display: inline-block; border: 2px solid #111; border-radius: 999px; padding: 3px 11px; font-weight: 700; font-size: 13px; }
+.ee { display: inline-block; border: 2.5px solid #111; border-radius: 999px; padding: 5px 13px; font-weight: 700; font-size: 13px; }
+.nota { font-size: 13px; color: #3d3d3d; margin: 10px 0 0; }
+</style>
+</head>
+<body>
+<div class="lamina">
+  <p class="titulo">Componentes de la interfaz</p>
+  <p class="bajada">Bordes gruesos de 3 px, sombra dura y colores planos · estilos/global.css y CSS Modules</p>
+  <div style="display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:14px">
+    <div class="bl">
+      <p class="bt">Botones</p>
+      <div style="display:flex;flex-wrap:wrap;gap:16px">
+        <span class="btn" style="background:#ffc933">Ver catálogo →</span>
+        <span class="btn" style="background:#fff">Seguir comprando</span>
+        <span class="btn" style="background:#111;color:#ffc933">Finalizar compra</span>
+        <span class="btn" style="background:#0070a8;color:#fff">Pagar con Mercado Pago</span>
+      </div>
+      <p class="nota">Al pasar el mouse se levantan; al tocarlos, se hunden sobre la sombra.</p>
+    </div>
+    <div class="bl">
+      <p class="bt">Campos de formulario</p>
+      <p style="margin:0 0 5px;font-weight:700;font-size:15px">Email</p>
+      <div style="border:3px solid #111;border-radius:12px;padding:10px 14px;font-size:16px;box-shadow:4px 4px 0 #3d7bff">nombre@correo.com</div>
+      <p style="margin:12px 0 5px;font-weight:700;font-size:15px">Teléfono</p>
+      <div style="border:3px solid #c0392b;border-radius:12px;padding:10px 14px;font-size:16px;color:#3d3d3d">260 412</div>
+      <p style="margin:6px 0 0;font-size:14px;font-weight:700;color:#b3261e">El teléfono no es válido</p>
+      <p class="nota">El foco se marca con sombra azul; cada error va debajo de su campo.</p>
+    </div>
+    <div class="bl">
+      <p class="bt">Fichas de filtro</p>
+      <div style="display:flex;flex-wrap:wrap;gap:9px">
+        <span class="fi" style="background:#111;color:#ffc933">Fútbol</span><span class="fi">Básquet</span><span class="fi">Pádel</span><span class="fi">Solo ofertas</span><span class="fi">M</span><span class="fi" style="background:#111;color:#ffc933">L</span><span class="fi">XL</span>
+      </div>
+      <p class="nota">La ficha elegida queda en negro con letra amarilla.</p>
+      <p class="bt" style="margin-top:16px">Sellos de producto</p>
+      <div style="display:flex;flex-wrap:wrap;gap:9px">
+        <span class="se" style="background:#2bb673">Fútbol</span><span class="se" style="background:#ff7a2f">Básquet</span><span class="se" style="background:#7fb2ff">Pádel</span><span class="se" style="background:#ff7a2f">-20%</span><span class="se" style="background:#ffc933">Personalizable</span><span class="se" style="background:#fff">Sin stock</span>
+      </div>
+    </div>
+    <div class="bl">
+      <p class="bt">Etiquetas de estado del pedido</p>
+      <div style="display:flex;flex-wrap:wrap;gap:9px">
+        <span class="ee" style="background:#fff">Pendiente de pago</span><span class="ee" style="background:#2bb673">Pagado</span><span class="ee" style="background:#ffc933">En preparación</span><span class="ee" style="background:#7fb2ff">Enviado</span><span class="ee" style="background:#2bb673">Entregado</span><span class="ee" style="background:#ff8a7a">Cancelado</span>
+      </div>
+      <p class="bt" style="margin-top:16px">Tarjeta de producto</p>
+      <div style="display:flex;gap:14px;align-items:flex-start">
+        <div style="width:180px;border:3px solid #111;border-radius:14px;box-shadow:5px 5px 0 #111;overflow:hidden;flex:none">
+          <div style="height:90px;background:#dce8ff;border-bottom:3px solid #111;position:relative"><span class="se" style="background:#2bb673;position:absolute;top:7px;left:7px">Fútbol</span><span class="se" style="background:#ff7a2f;position:absolute;top:7px;right:7px">-20%</span></div>
+          <div style="padding:8px 10px"><p style="margin:0;font-size:12px;color:#3d3d3d">Adidas · Camisetas</p><p style="margin:2px 0;font-weight:700;font-size:15px">Camiseta Titular</p><span style="text-decoration:line-through;font-size:13px;color:#3d3d3d">$ 100</span> <span style="font-family:'Bricolage Grotesque',sans-serif;font-weight:800;font-size:22px">$ 80</span></div>
+        </div>
+        <p class="nota" style="margin:0">Deporte arriba a la izquierda, descuento arriba a la derecha y precio tachado si está en oferta.</p>
+      </div>
+    </div>
+  </div>
+</div>
+</body>
+</html>
