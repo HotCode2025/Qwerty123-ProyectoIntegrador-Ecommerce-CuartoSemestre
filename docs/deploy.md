@@ -18,3 +18,10 @@
   MP_NOTIFICATION_URL, FRONTEND_URL, CORS_ORIGINS, BREVO_API_KEY, BREVO_SENDER_EMAIL, CLOUDINARY_URL
 - El plan gratuito duerme el servidor sin uso: la primera visita tarda cerca de un minuto.
 - La raíz de la URL responde 401: es normal, la API solo atiende rutas /api/v1/...
+
+## Frontend (Vercel)
+- Proyecto conectado al repositorio del equipo (rama main, carpeta frontend).
+- URL: https://golden-point-kappa.vercel.app
+- Variable de entorno: VITE_API_URL (dirección del backend en Render).
+- vercel.json redirige todas las rutas a index.html, para que /producto/3 o /pago/resultado no den 404 al recargar.
+- En Render, FRONTEND_URL y CORS_ORIGINS apuntan a esta dirección.
