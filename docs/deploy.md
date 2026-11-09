@@ -1,6 +1,7 @@
 # Deploy de Golden Point
 
 ## Base de datos (Aiven)
+
 - Servicio MySQL en Aiven, plan gratuito. Exige conexión SSL.
 - La primera vez el backend crea las tablas (DDL_AUTO=update).
 - Migraciones aplicadas: las 3 de backend/migraciones.
@@ -8,6 +9,7 @@
 - Los datos de conexión no se suben al repositorio: están en las variables de Render.
 
 ## Backend (Render)
+
 - Web Service con Docker, conectado al repositorio del equipo (rama main, carpeta backend).
 - Nombre del servicio: Qwerty123-ProyectoIntegrador-Ecommerce-CuartoSemestre
 - URL: https://proyecto-integrador-e-commerce-qwerty123.onrender.com
@@ -20,8 +22,15 @@
 - La raíz de la URL responde 401: es normal, la API solo atiende rutas /api/v1/...
 
 ## Frontend (Vercel)
+
 - Proyecto conectado al repositorio del equipo (rama main, carpeta frontend).
 - URL: https://golden-point-kappa.vercel.app
 - Variable de entorno: VITE_API_URL (dirección del backend en Render).
 - vercel.json redirige todas las rutas a index.html, para que /producto/3 o /pago/resultado no den 404 al recargar.
 - En Render, FRONTEND_URL y CORS_ORIGINS apuntan a esta dirección.
+
+## Servicios externos
+
+- Mercado Pago: webhook en https://proyecto-integrador-e-commerce-qwerty123.onrender.com/api/v1/pagos/webhook, evento Pagos. La clave secreta está en MP_WEBHOOK_SECRET.
+- Brevo: envía los mails de confirmación y avisos de stock. La clave está en BREVO_API_KEY.
+- Prueba: compra aprobada cerrando Mercado Pago sin volver; el pedido quedó Pagado y llegó el mail.
