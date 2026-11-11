@@ -9,7 +9,6 @@ El brief completo está en [docs/Brief_Golden_Point_v2.docx](docs/Brief_Golden_P
 - **Video promocional:** [Ver video](https://youtu.be/Aix8EJIy-dw)
 - **Video explicativo:** [Ver video](https://youtu.be/dSYfyAJjlVw)
 
-- 
 ## Tecnologías
 
 | Parte | Tecnología |
