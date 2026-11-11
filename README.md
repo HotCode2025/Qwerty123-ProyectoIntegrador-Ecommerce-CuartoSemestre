@@ -4,6 +4,12 @@ E-commerce de equipamiento deportivo de fútbol, básquet y pádel. Proyecto Fin
 
 El brief completo está en [docs/Brief_Golden_Point_v2.docx](docs/Brief_Golden_Point_v2.docx).
 
+## Presentación del proyecto
+
+- **Video promocional:** [Ver video](https://youtu.be/Aix8EJIy-dw)
+- **Video explicativo:** [Ver video](https://youtu.be/dSYfyAJjlVw)
+
+- 
 ## Tecnologías
 
 | Parte | Tecnología |
